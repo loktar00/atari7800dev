@@ -1,0 +1,50 @@
+7800basic change log...
+
+___changes since 0.2 beta20140608___ 
+    -fixed a bug in memcpy 
+
+___changes since 0.2 beta20140602___ 
+    -added TIA sound effect engine and playsfx command.
+
+___changes since 0.1 beta20140423___ 
+    -added "set mcpdevcart on" option and supporting bankswitch code.
+    -added "dmahole #" command, which directs following basic code to a given DMA hole.
+    -bumped version number to v0.2.
+
+___changes since 0.1 beta20140331___ 
+    -added CARRY to if...then implementation.
+    -fixed a bug where incgraphic would refuse to import 256 byte-wide non-160A graphics.
+    -fixed a bug where "return:rem comment" would cause a compile error.
+    -extended the number of constants to accomodate large numbers of color constants.
+    -added indirect arrays.
+
+___changes since 0.1 beta20140320___ 
+    -modified plotchars to directly work with strings of text, instead of forcing the user to define alphadata.
+    -added "ASCII" and "default" options to the alphachars command.
+    -fixed bug in preprocessor, where alphachars processing didn't end.
+    -added "set debug color" command, to assist with seeing how much of the visible screen time has been used.
+    -updated the Guide with information on above enhancements.
+    -updated the Guide with tip for fine-tuning color constants.
+
+___changes since 0.1 beta20140311___ 
+    -added pokey detection code, and "set pokeysupport on" command.
+    -added psound command.
+    -fixed bug that didn't allow alternate mode (160B, 320C, 320D) character support.
+    -modified the DL interrupts. previously 1x non-visible scanline was counted as visible.
+    -removed "wait for screen end" code from clearscreen, as it isn't strictly needed.
+
+___changes since 0.1 beta20140306___ 
+    -fixed alphadata so the format of the generated assembly for large 
+     amounts of data wouldn't segfault dasm.
+    -added memcpy command.
+    -added peekchar and pokechar commands.
+    -added "ramcharmap" sample.
+    -fixed bug that slightly reduced efficiency of plotmap palette setup.
+
+___changes since 0.1 beta20140228___ 
+    -added some sanity-checking to install_ux.sh.
+    -miscellaneous Guide updates, per forum feedback and new commands.
+    -added "converttobcd()" function, courtesy of Omegamatrix.
+    -added "boxcollision()" function.
+    -added tsound command.
+    -fixed a few commands that inadvertently used the 6507 stack location.
