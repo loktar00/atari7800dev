@@ -1,0 +1,26 @@
+{
+  "name": "atari7800dev",
+  "version": "1.0.0",
+  "description": "atari7800dev\r ============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://loktar00@github.com/loktar00/atari7800dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loktar00/atari7800dev/issues"
+  },
+  "homepage": "https://github.com/loktar00/atari7800dev",
+  "dependencies": {
+    "gulp": "^3.8.8",
+    "gulp-shell": "^0.2.10"
+  },
+  "devDependencies": {
+    "gulp-shell": "^0.2.10"
+  }
+}
