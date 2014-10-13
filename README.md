@@ -1,4 +1,4 @@
-atari7800dev
+Bomb Man 7800
 ============
 
 Bomb Man 7800
