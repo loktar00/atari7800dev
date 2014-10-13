@@ -21,6 +21,8 @@
     "gulp-shell": "^0.2.10"
   },
   "devDependencies": {
-    "gulp-shell": "^0.2.10"
+    "gulp-imagemin": "^1.0.1",
+    "gulp-shell": "^0.2.10",
+    "imagemin-pngcrush": "^1.0.0"
   }
 }

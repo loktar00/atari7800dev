@@ -1,8 +1,35 @@
 ; This file contains variable mapping and other information for the current project.
 
-atascii_mode = $00
-atascii_width_twoscompliment = $05
-atascii_width = $7b
-atascii_color1 = $00
-atascii_color0 = $0d
-ZONEHEIGHT = 8
+bombman_f_1_mode = $00
+bombman_f_1_width_twoscompliment = $1c
+bombman_f_1_width = $04
+tileset_level_mode = $00
+tileset_level_width_twoscompliment = $18
+tileset_level_width = $08
+screen1map_length = .skipL061-screen1map 
+ 
+bombman_f_1_color3 = $00
+bombman_f_1_color2 = $04
+bombman_f_1_color1 = $08
+bombman_f_1_color0 = $d6
+tileset_level_color3 = $00
+tileset_level_color2 = $05
+tileset_level_color1 = $08
+tileset_level_color0 = $d6
+playery = $2220
+ 
+playerx = $2200
+ 
+tempplayerdy = f
+ 
+tempplayerdx = e
+ 
+tempplayercolor = d
+ 
+tempplayery = c
+ 
+tempplayerx = b
+ 
+frame = a
+ 
+DOUBLEWIDE = 1
