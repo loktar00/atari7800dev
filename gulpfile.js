@@ -29,4 +29,4 @@ gulp.task('makerom',
         })
 );
 
-gulp.task('default', ['makerom']);
+gulp.task('default', ['run']);
