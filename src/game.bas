@@ -1,22 +1,25 @@
-
- rem ** 24 sprites display. this is about the limit on real hardware.
-
   set doublewide on
+  displaymode 160A
 
-  dim frame=a
-  dim tempplayerx=b
-  dim tempplayery=c
-  dim tempplayercolor=d
-  dim tempplayerdx=e
-  dim tempplayerdy=f
-
-  dim playerx=$2200
-  dim playery=$2220
-
-  incgraphic gfx/tileset_level.png 160A 0 1 2 3
+  incgraphic gfx/tileset_level.png 160A
   incgraphic gfx/bombman_f_1.png
 
   characterset tileset_level
+
+  dim frame = a
+  dim tempplayerx = b
+  dim tempplayery = c
+
+  dim player1posX = d
+  dim player1posY = e
+  dim player1CharN = f
+  dim player1CharS = g
+  dim player1CharE = h
+  dim player1CharW = I
+
+  dim screendata = $2200 
+  dim playerx=$22DC
+  dim playery=$22e0
 
   BACKGRND=$D6
  
@@ -46,44 +49,65 @@
   P4C3=$31
 
   playerx[0]=8
-  playery[0]=1
+  playery[0]=16
 
   playerx[1]=136
-  playery[1]=1
+  playery[1]=16
 
   playerx[2]=8
-  playery[2]=9
+  playery[2]=144
 
   playerx[3]=136
-  playery[3]=9
+  playery[3]=144
 
   clearscreen
-  plotmap screen1map 0 0 0 20 11
-  drawscreen
+  memcpy screendata defaultMap 220
+  plotmap screendata 0 0 0 20 11
+
   savescreen
 
 main
+  restorescreen
 
- rem ** we split up the logic from the plot commands. this allows our logic
- rem ** to run during the visible screen. issuing a plot command forces 
- rem ** 7800basic to wait for the visible screen to end, to avoid glitches.
- restorescreen
+  player1posX = (playerx[0]+8)/8
+  player1posY = (playery[0]+4)/16
 
- rem ** we could probably get a couple more sprites if we unrolled this loop
- rem ** and used a hardcoded palette value. but this is a bit more realistic.
+  rem *pokechar screendata player1posX player1posY 20 11 3
+
+  tempplayery = player1posY + 1
+  player1CharS = peekchar(screendata, player1posX, tempplayery, 20,11)
+
+  tempplayery = player1posY - 1
+  player1CharN = peekchar(screendata, player1posX, tempplayery, 20,11)
+
+  tempplayerx = player1posX - 1
+  player1CharW = peekchar(screendata, tempplayerx, player1posY, 20,11)
+
+  tempplayerx = player1posX + 1
+  player1CharE = peekchar(screendata, tempplayerx, player1posY, 20,11)
+
+  if joy0down && playery[0] < 144 && player1CharS = 0 then playery[0]=playery[0]+1:goto donePlayerWalk
+  if joy0up && playery[0] > 16  && player1CharN = 0 then playery[0]=playery[0]-1:goto donePlayerWalk
+
+  if joy0left && playerx[0] > 8  && player1CharW = 0 then playerx[0]=playerx[0]-1:goto donePlayerWalk
+  if joy0right && playerx[0] < 136  && player1CharE = 0 then playerx[0]=playerx[0]+1:goto donePlayerWalk
+
+
+donePlayerWalk
+
  for z=0 to 3
-   tempplayerx=playerx[z]
-   tempplayery=playery[z]*16
+   tempplayerx = playerx[z]
+   tempplayery = playery[z]
    q=(z&3)+1
    plotsprite bombman_f_1 q tempplayerx tempplayery
  next
- drawscreen
 
+ drawscreen
  goto main
 
  alphachars ' abcdefghijklmnopqrstuvwxyz'
 
- alphadata screen1map tileset_level
+ alphadata defaultMap tileset_level
  'cbcbcbcbcbcbcbcbcbcb'
  'c                  b'
  'c  bc  bc  bc  bc  b'
