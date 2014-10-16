@@ -756,10 +756,10 @@ A few games have been listed as rumored, but they might very well be fake (pleas
 	</software>
 
 	<software name="beavis">
-		<description>Beavis and Butt-head (Euro)</description>
-		<year>1995</year>
+		<description>Beavis and Butt-head (Euro, USA)</description>
+		<year>1994</year>
 		<publisher>Viacom New Media</publisher>
-		<info name="serial" value="T-139018-50"/>
+		<info name="serial" value="T-139018, T-139018-50"/>
 		<part name="cart" interface="gamegear_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="beavis and butt-head (europe).bin" size="524288" crc="a6bf865e" sha1="dd2ea76c05d933b91f1b03140f6a04bf02f746d1" offset="000000" />
@@ -767,11 +767,15 @@ A few games have been listed as rumored, but they might very well be fake (pleas
 		</part>
 	</software>
 
-	<software name="beavisu" cloneof="beavis">
-		<description>Beavis and Butt-head (USA)</description>
+<!-- some disassembling performed by Paul Baker suggests that this version is a prototype
+e.g.  the mapper control register at $fffc gets set to $80, you cannot switch characters
+on the pause screen, some messages are not displayed ("Sorry boys, no tickets, no show!"
+to explain why it is not possible to progress beyond a certain point in the game without
+a certain item) -->
+	<software name="beavisp" cloneof="beavis">
+		<description>Beavis and Butt-head (Prototype?)</description>
 		<year>1994</year>
 		<publisher>Viacom New Media</publisher>
-		<info name="serial" value="T-139018"/>
 		<part name="cart" interface="gamegear_cart">
 			<dataarea name="rom" size="524288">
 				<rom name="beavis and butt-head (usa).bin" size="524288" crc="3858f14f" sha1="ef47d449f65cfe129368a77cc0a4679a0d55ee63" offset="000000" />
@@ -3898,6 +3902,17 @@ A few games have been listed as rumored, but they might very well be fake (pleas
 		<part name="cart" interface="gamegear_cart">
 			<dataarea name="rom" size="262144">
 				<rom name="lemmings (world).bin" size="262144" crc="0fde7baa" sha1="5a79b6fa15b7085fc7062945f0e6d469d49871e1" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="lemming2">
+		<description>Lemmings 2 - The Tribes (Euro, Prototype)</description>
+		<year>1994</year>
+		<publisher>Psygnosis</publisher>
+		<part name="cart" interface="sms_cart">
+			<dataarea name="rom" size="524288">
+				<rom name="lemmings 2 - the tribes [proto].bin" size="524288" crc="fbc807e1" sha1="ad0ce8fc8ce9e5ef9b68b76fb7f3eced4245d5c4" offset="000000" />
 			</dataarea>
 		</part>
 	</software>
@@ -7270,6 +7285,7 @@ A few games have been listed as rumored, but they might very well be fake (pleas
 	</software>
 
 	<software name="soniclab">
+	<!-- A final pre-release version of this same dump was found on a proto board with 4x128K sockets and no labels -->
 		<description>Sonic Labyrinth (World)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
@@ -7573,6 +7589,28 @@ A few games have been listed as rumored, but they might very well be fake (pleas
 			<feature name="ic1" value="MPR-15169 J02" />
 			<dataarea name="rom" size="524288">
 				<rom name="mpr-15169 j02.ic1" size="524288" crc="95a18ec7" sha1="dabb452e416b4fa9cb83d8ddd307c2a32c3a1a7f" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sonic2d" cloneof="sonic2">
+	<!-- This predates the final release and contains some different tiles & sprites compared to the final game -->
+		<description>Sonic The Hedgehog 2 (Rolling Demo)</description>
+		<year>1992</year>
+		<publisher>Sega</publisher>
+		<part name="cart" interface="gamegear_cart">
+			<feature name="pcb" value="171-5986B" />
+			<feature name="ic1" value="[unmarked]" />
+			<feature name="ic2" value="[unmarked]" />
+			<feature name="ic3" value="MB8464A-10LL-SK" />
+			<feature name="ic4" value="315-5235" />
+			<feature name="ic5" value="HD74LS157P" />
+			<feature name="ic6" value="IL7-1026B" />
+			<feature name="batt" value="" />
+			<feature name="sw" value="ON = 1M / OFF = 256" />
+			<dataarea name="rom" size="262144">
+			<!-- The ROM should be split in two halves -->
+				<rom name="sonic_2_auto_demo_prototype_(1991-12-05)_tmr_sega_cb06_ffff.bin" size="262144" crc="15ad37a5" sha1="b780c6f059b48d1bb48ee2ad521552dab1487c88" offset="000000" />
 			</dataarea>
 		</part>
 	</software>
@@ -8596,6 +8634,7 @@ A few games have been listed as rumored, but they might very well be fake (pleas
 	</software>
 
 	<software name="tailsadv">
+	<!-- A final pre-release version of this same dump was found on a proto board with 4x128K sockets and no labels -->
 		<description>Tails Adventures (World)</description>
 		<year>1995</year>
 		<publisher>Sega</publisher>
@@ -9917,6 +9956,19 @@ A few games have been listed as rumored, but they might very well be fake (pleas
 		<part name="cart" interface="gamegear_cart">
 			<dataarea name="rom" size="131072">
 				<rom name="zoop (usa).bin" size="131072" crc="3247ff8b" sha1="f58359ffa7bc3ec82913be128d141e5d41926b88" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mgear">
+		<description>Master Gear Adapter</description>
+		<year>198?</year>
+		<publisher>&lt;unknown&gt;</publisher>
+		<part name="cart" interface="gamegear_cart">
+			<feature name="slot" value="mgear" />
+			<feature name="pin_42" value="sms_mode" />
+			<dataarea name="rom" size="1">
+				<!-- this cartridge is just an adapted -->
 			</dataarea>
 		</part>
 	</software>

@@ -24,6 +24,19 @@ Titles, serial #s, publishers and release dates taken from:
 
 <softwarelist name="fm7_cass" description="Fujitsu FM-7 cassettes">
 
+	<software name="3dufo">
+		<description>3D UFO</description>
+		<year>1984</year>
+		<publisher>Compac</publisher>
+		<info name="serial" value="CC-1114"/>
+		<info name="alt_title" value="3ディーユーフォー"/>
+		<part name="cass1" interface="fm7_cass">
+			<dataarea name="cass" size="538862">
+				<rom name="3d_ufo(1984_compac).t77" size="538862" crc="77966c67" sha1="9eaddab8412f944111cd19f3547353d69755951a" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
 	<software name="alde">
 		<description>Aldebaran</description>
 		<year>1981</year>
@@ -1163,6 +1176,20 @@ Titles, serial #s, publishers and release dates taken from:
 		<part name="cass1" interface="fm7_cass">
 			<dataarea name="cass" size="1227180">
 				<rom name="main.t77" size="1227180" crc="448b5b8c" sha1="388fbd175d5587447ecd1d84d5b3a795e1fcaec8" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<!-- requires FM sound (audio and joystick port, listed as FM-7, so FM sound and joystick was available as an add-on? -->
+	<software name="magus">
+		<description>Magus</description>
+		<year>1985</year>
+		<publisher>ソフトプロ (Soft Pro)</publisher>
+		<info name="serial" value="FUG181"/>
+		<info name="alt_title" value="The Magus - Mysterious Pinball"/>
+		<part name="cass1" interface="fm7_cass">
+			<dataarea name="cass" size="4615868">
+				<rom name="magus.t77" size="4615868" crc="261f3f41" sha1="a30fd1386ee3c657537342e9496fc38501a5a686" offset="0" />
 			</dataarea>
 		</part>
 	</software>

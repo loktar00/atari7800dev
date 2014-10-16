@@ -6,7 +6,7 @@ bombman_f_1_width = $04
 tileset_level_mode = $00
 tileset_level_width_twoscompliment = $14
 tileset_level_width = $0c
-defaultMap_length = .skipL075-defaultMap 
+defaultMap_length = .skipL082-defaultMap 
  
 playery = $22e0
  

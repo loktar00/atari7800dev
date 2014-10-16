@@ -1,595 +1,525 @@
-0.153
+﻿0.155
 -------
 
 
 MAMETesters Bugs Fixed
 ----------------------
-- 05249: [Sound] (pce.c) pce: Missing sound from console (no HuC or MSM)
-  just CD/DA (Osso)
-- 05347: [Graphics] (a7800.c) a7800 [digdugu]: Line of garbage graphics 
-  on game screen
-- 05448: [Graphics] (a7800.c) a7800 [xeviousu]: Line Below Score Display 
-  under Xevious
-- 05450: [Graphics] (a7800.c) a7800 [hattricku]: Grey Line At Top Of 
-  Playfield under Hat Trick
-- 05451: [Graphics] (a7800.c) a7800 [midnightu]: Line at Bottom of Playfield 
-  under Midnight Mutants
-- 05453: [Graphics] (a7800.c) a7800 [planetsmu]: Difficulty selection text 
-  improved but some corruption still present.
-- 05454: [Graphics] (a7800.c) a7800 [ddragonu]: Corrupted scanline in score display 
-  still present but moved up from previous position.
-- 05455: [Graphics] (a7800.c) a7800 [commandou]: Corrupted text improved but still 
-  there on title/difficulty selection screen.
-- 05456: [Graphics] (a7800.c) a7800 [plutos]: Line glitch at top of screen below score 
-  display, and towards the bottom of the gameplay field.
-- 05457: [Speed] (a7800.c) a7800 [1on1u]: 'Shot' clock & 'Game Time Remaining' clock 
-  countdown too fast; makes game unplayable.
-- 05443: [Core] when launching softlist items without the media switch, MESS ignores 
-  hashpath option from mess.ini (micko)
-- 05381: [Crash/Freeze] (atari400.c) All sets in atari400.c which use a800_flop.xml: 
-  Crash when obtaining a list of approximate matches (Fabio Priuli)
-- 05436: [Crash/Freeze] (ec184x.c) ec1841, ec1845: Fatal Exception (Osso)
-- 05437: [Graphics] (msx.c) nms8220, nms8220a: [debug] Graphics regression (Osso)
-- 05297: [Color/Palette] (rmnimbus.c) nimbus: Palette differences between regular and 
-  debug builds (Osso)
-- 05398: [Core] (hp48.c) hp49g: [debug] Debug shows corrupt graphics when compared to 
-  regular compile (Osso)
-- 05483: bbcb [demo]: Fatal error: Illegal operation on unmounted image
-  (src/emu/diimage.h:261) (Fabio Priuli)
+- 05728: [Crash/Freeze] (pce.c) sgx: The "Axelay" Demo crashes the MESS while
+  starting. (Fabio Priuli)
+- 05729: [Crash/Freeze] (pce.c) pce, tg16: The demo "Split-Resolution Demo by
+  Chris Covell" does not work properly. (Fabio Priuli)
+- 05712: [DIP/Input] (timex.c) ts2068, uk2086: The keyboard input 
+  does not working. (Fabio Priuli)
+- 05591: [Gameplay] (atari400.c) a5200: Only one button works 
+  (player 1) (Fabio Priuli)
+- 05639: [Interface] Internal UI: Selecting Console, then using 
+  File Manager to select media doesn't work (Fabio Priuli)
+- 05672: [Crash/Freeze] (apple2.c) apple2e, apple2ee, probably 
+  others: hang when enabling output latch with no floppy in drive (Olivier Galibert)
 
 New System Drivers Supported:
 -----------------------------
--Bandai Super Vision 8000 [ranger_lennier, Charles McDonald, Wilbert Pol, Robbbert]
--Apple IIe (UK) [R. Belmont]
--Apple IIe (Enhanced, UK) [R. Belmont]
--Pecom 32 [Zarko Zivanov, Miodrag Milanovic]
--AIWA MegaCD CSD-G1M [Bad_Ad84]
--Samsung Gam*Boy I [Enik Land]
+-TI-95 PROCALC [hap]
+-Microdigital TK3000//e [R. Belmont]
+-Apple IIgs (ROM00 prototype 3/10/1986) [Apple II Documentation Project]
+-Peripheral Technology PT68K2 [Al Kossow, R. Belmont]
+-Canon V-30 (MSX2)  [Wilbert Pol]
+-Canon V-30F (MSX2)  [Wilbert Pol]
+-Daewoo Zemmix CPG-120 (Korea) (MSX2)  [Wilbert Pol]
+-Mitsubishi ML-G3 (MSX2)  [Wilbert Pol]
+-Perfect Perfect1 (MSX1)  [Wilbert Pol]
+-Philips NMS-8260 (Prototype) (MSX2)  [Wilbert Pol]
+-Philips NMS-8270 (Prototype) (MSX2)  [Wilbert Pol]
+-Sanyo MPC-2500FD (MSX2)  [Wilbert Pol]
+-Sanyo Wavy MPC-27 (MSX2)  [Wilbert Pol]
+-Sanyo Wavy PHC-77 (MSX2)  [Wilbert Pol]
+-Sony HB-701FD (MSX1)  [Wilbert Pol]
+-Toshiba HX-21 (MSX1)  [Wilbert Pol]
+-Toshiba HX-22 (MSX1)  [Wilbert Pol]
+-Toshiba HX-34 (MSX2)  [Wilbert Pol]
+-Toshiba HX-34I (MSX2)  [Wilbert Pol]
+-Victor HC-90 (MSX2)  [Wilbert Pol]
+-Victor HC-95 (MSX2)  [Wilbert Pol]
+-Victor HC-95A (MSX2)  [Wilbert Pol]
+-Yamaha YIS-503 III R (Russian) (MSX2)  [Wilbert Pol]
+-Yamaha YIS-503 III R (Estonian) (MSX2)  [Wilbert Pol]
+-Yamaha YIS805/128 (Russian) (MSX2)  [Wilbert Pol]
+-Yamaha YIS805R2/128 (Russian) (MSX2)  [Wilbert Pol]
+-Yamaha YIS805R2/128 (Estonian) (MSX2)  [Wilbert Pol]
+-Yamaha YIS805/256 (Russian) (MSX2)  [Wilbert Pol]
+
 
 Systems Promoted from GAME_NOT_WORKING:
 ---------------------------------------
--Apple III [R. Belmont]
--Ensoniq KT-76 [R. Belmont, Guru]
+-TI-74 BASICALC [hap]
+-Laser 128 (version 4.2) [Peter Ferrie, R. Belmont]
+-Laser 128ex (version 4.5) [Peter Ferrie, R. Belmont]
+-Laser 128ex2 (version 6.1) [Peter Ferrie, R. Belmont]
+-Peripheral Technology PT68K4 [Al Kossow, R. Belmont]
+-Al Alamiah AX-150 (MSX1)  [Wilbert Pol]
+-Canon V-8 (MSX1)  [Wilbert Pol]
+-Canon V-20E (MSX1)  [Wilbert Pol]
+-Canon V-20F (MSX1)  [Wilbert Pol]
+-Canon V-20G (MSX1)  [Wilbert Pol]
+-Canon V-20S (MSX1)  [Wilbert Pol]
+-Canon V-25 (MSX2)  [Wilbert Pol]
+-Casio MX-10 (MSX1)  [Wilbert Pol]
+-Casio MX-101 (MSX1)  [Wilbert Pol]
+-Casio MX-15 (MSX1)  [Wilbert Pol]
+-Casio PV-7 (MSX1)  [Wilbert Pol]
+-Daewoo CPC-88 (Korea) (MSX1)  [Wilbert Pol]
+-Daewoo CPC-330K KOBO (Korea) (MSX2)  [Wilbert Pol]
+-Daewoo DPC-200E (MSX1)  [Wilbert Pol]
+-Daewoo Zemmix CPC-50A (Korea) (MSX1)  [Wilbert Pol]
+-Daewoo Zemmix CPC-50B (Korea) (MSX1)  [Wilbert Pol]
+-Daewoo Zemmix CPC-51 (Korea) (MSX1)  [Wilbert Pol]
+-Daewoo Zemmix CPC-61 (Korea) (MSX2)  [Wilbert Pol]
+-Fenner DPC-200 (MSX1)  [Wilbert Pol]
+-Fenner FPC-500 (MSX1)  [Wilbert Pol]
+-Fenner FPC-900 (MSX2)  [Wilbert Pol]
+-Fenner SPC-800 (MSX1)  [Wilbert Pol]
+-Fujitsu FM-X (MSX1)  [Wilbert Pol]
+-Goldstar FC-80U (MSX1)  [Wilbert Pol]
+-Goldstar GFC-1080 (MSX1)  [Wilbert Pol]
+-Goldstar GFC-1080A (MSX1)  [Wilbert Pol]
+-Hitachi MB-H2 (MSX1)  [Wilbert Pol]
+-Hitachi MB-H25 (MSX1)  [Wilbert Pol]
+-Hitachi MB-H50 (MSX1)  [Wilbert Pol]
+-Hitachi MB-H70 (MSX2)  [Wilbert Pol]
+-Kawai KMC-5000 (MSX2)  [Wilbert Pol]
+-Mitsubishi ML-F48 (MSX1)  [Wilbert Pol]
+-Mitsubishi ML-F110 (MSX1)  [Wilbert Pol]
+-Mitsubishi ML-F120 (MSX1)  [Wilbert Pol]
+-Mitsubishi ML-G1 (MSX2)  [Wilbert Pol]
+-Mitsubishi ML-G10 (MSX2)  [Wilbert Pol]
+-National / Matsushita FS-4000 (alt) (Japan) (MSX1)  [Wilbert Pol]
+-Philips NMS-8250F (MSX2)  [Wilbert Pol]
+-Philips NMS-8255F (MSX2)  [Wilbert Pol]
+-Philips NMS-8280F (MSX2)  [Wilbert Pol]
+-Pioneer PX-07UK (MSX1)  [Wilbert Pol]
+-Pioneer PX-V60 (MSX1)  [Wilbert Pol]
+-Sanyo MPC-200 (MSX1)  [Wilbert Pol]
+-Sanyo MPC-200SP (MSX1)  [Wilbert Pol]
+-Sanyo Wavy PHC-55FD2 (MSX2)  [Wilbert Pol]
+-Sony HB-10 (MSX1)  [Wilbert Pol]
+-Sony HB-101P (MSX1)  [Wilbert Pol]
+-Sony HB-55 (MSX1)  [Wilbert Pol]
+-Sony HB-F500F (MSX2)  [Wilbert Pol]
+-Spectravideo SVI-738 (Arabic) (MSX1)  [Wilbert Pol]
+-Spectravideo SVI-738 (Denmark) (MSX1)  [Wilbert Pol]
+-Spectravideo SVI-738 (Spain) (MSX1)  [Wilbert Pol]
+-Toshiba HX-10D (MSX1)  [Wilbert Pol]
+-Toshiba HX-10DP (MSX1)  [Wilbert Pol]
+-Toshiba HX-10E (MSX1)  [Wilbert Pol]
+-Toshiba HX-10F (MSX1)  [Wilbert Pol]
+-Toshiba HX-10SA (MSX1)  [Wilbert Pol]
+-Toshiba HX-20I (MSX1)  [Wilbert Pol]
+-Toshiba HX-21I (MSX1)  [Wilbert Pol]
+-Toshiba HX-22I (MSX1)  [Wilbert Pol]
+-Toshiba HX-23I (MSX2)  [Wilbert Pol]
+-Toshiba HX-33 (MSX2)  [Wilbert Pol]
+-Toshiba FS-TM1 (MSX2)  [Wilbert Pol]
+-Victor HC-5 (MSX1)  [Wilbert Pol]
+-Victor HC-6 (MSX1)  [Wilbert Pol]
+-Victor HC-7 (MSX1)  [Wilbert Pol]
+-Yamaha CX5F (w/SFG01) (MSX1)  [Wilbert Pol]
+-Yamaha CX5F (w/SFG05) (MSX1)  [Wilbert Pol]
+-Yamaha YIS604 (64KB) (MSX2)  [Wilbert Pol]
+-Yamaha YIS604 (128KB) (MSX2)  [Wilbert Pol]
+
 
 Skeleton drivers:
 -----------------
--Sony PVE-500  [Felipe Sanches]
--Pulsar Little Big Board  [Robbbert]
--Replicator 1  [Felipe Sanches]
--Henry Prot I v19 (REV.1) [Felipe Sanches]
--Fanuc System 15 [Guru, R. Belmont]
--IQ Unlimited [MooglyGuy, Smitdogg, The Dumping Union, TeamEurope]
--Compucolor II [Jim Battle, Curt Coder]
--Motorola M68HC05EVS [Al Kossow, Robbbert]
--Memorex 2178 [Al Kossow, Robbbert]
--Roland Sound Canvas SC-55 [Stefan Lindberg]
--Genius Leader 4000 Quadro (Germany)  [The Dumping Union, TeamEurope]
--Genius Leader 4004 Quadro L (Germany) [The Dumping Union, TeamEurope]
--Genius Leader 5000 (Germany) [The Dumping Union, TeamEurope]
--Genius Leader 5005X (Germany) [The Dumping Union, TeamEurope]
--Genius Leader 6000SL (Germany) [The Dumping Union, TeamEurope]
--Genius Leader 7007SL (Germany) [The Dumping Union, TeamEurope]
--VTech BrainStation 9009 CXL (Germany) [TeamEurope]
--Alphasmart 2000 [Jonathan Gevaryahu, Balrog]
--Kasparov Stratos Chess Computer [Cowering, O. Galibert]
--VTech Genius Leader Color (Germany) [TeamEurope]
--VTech Pitagorin Junior [Roberto Fresca]
--Husky Hunter 2 [Robbbert, John Elliot, Barry Rodewald]
--VTech Genius Leader 2000 Compact (Germany) [TeamEurope] 
--VTech Genius Master Table Top (Germany) [TeamEurope] 
--VTech Genius BrainStation 5505X (Germany) [TeamEurope]
--Amust Compak [Robbbert, Chickenman]
--Fanuc System P Model G [Guru, R. Belmont]
--SWTPC S/09 [Robert Justice]
-
+-Genius Leader Magic Color (Germany) [TeamEurope] 
+-Genius Junior Redstar 3 (Germany) [TeamEurope]
+-Genius Junior 4000 (Germany) [TeamEurope] 
+-Genius Junior 5000 (Germany) [TeamEurope] 
+-Genius Junior Redstar (Germany) [TeamEurope] 
+-Genius Leader Super Color (Germany) [TeamEurope]
+-Genius Leader 6600CX (Germany) [TeamEurope]
+-VTech Genius Leader Power Notebook (Germany) [TeamEurope] 
+-LexiPC Mega 2000 (Germany) [TeamEurope]
+-VTech PreComputer 1000 [Porchy]
+-TimeTop GameKing [Porchy]
+ 
 
 Software Lists:
 ----------------
--pet_flop.xml: Fixed "set unit number" program on HardBox disks. [Mike Naberezny]
 
--studio2.xml: Added Fun with Numbers cartridge.
- [brolly, Charles MacDonald, ranger_lennier]
+-pico.xml: added many new dumps, including some from Korean releases and
+ exclusive titles. [Team Europe]
 
--pico.xml: Added many new dumps, including most of the
- previously missing European releases [TeamEurope]
+-megadriv.xml: verified and documented a lot of dumps, added Shining
+ Force (Euro), redumped Muhammad Ali Heavyweight Boxing (Euro). [sunbeam]
 
--c128_flop.xml: Added 10 Years HVSC. [Curt Coder]
- 
--coco_cart.xml: Added some new dumps [K1W1]
+-nes.xml: added dump of Codemasters' Super Adventure Quests. [Porchy]
 
--c64_cart.xml: Added Insta-Calc v2.0. [Curt Coder]
+-glcolor.xml: documented the 'Spiel-und Lernspaß' cartridge.
+ [TeamEurope]
 
--m5.xml: Added several new Japanese dumps, including rare cart
- "Adidas Lucky Shoot" [Ola Andersson]
+-m5.xml: dumped Bosconian. [Ola Andersson]
 
--megaduck.xml: Added five more dumps. [ranger_lennier, Sean Riddle]
+-coleco.xml: Some more verified dumps and info added. [Ikrananka]
 
--c64_flop.xml: Added some VICE testprogs. (nw)
+-coleco.xml: replaced Sector Alpha incorrect dumps with a proper
+ one [Ikrananka]
 
--pet_rom.xml: Added Nestar Cluster/One CLO-1002-2 [Mike Naberezny]
+-coleco.xml: removed choplifter bad dump. [dink]
 
--softlist: Added several new dumps, protos and revisions to gameboy, gamegear,
- gba, gbcolor, megadriv, n64, nes, sms software lists. Many thanks to dumping 
- teams for their efforts. [Fabio Priuli]
+-psx.xml: added info to the games #-O. [Antopisa]
+
+-sms.xml: documenting Graphic Board prototype dump. [SMSPower]
+
+-nes.xml: added a couple of new multigame dumps using OneBus
+ PCB. [TeamEurope]
+
+-exl100.xml: added Exelvision EXL 100 cart list. [Fabio Priuli]
+
+-pencil2.xml: added Hanimex Pencil II cart list
+ [Robbbert, Fabio Priuli]
+
+-pegasus_cart.xml: added Aamber Pegasus ROM expansions list.
+ [neoncluster, Fabio Priuli]
+
+-dmv.xml: added Decision Mate V floppy softlist. [Sandro Ronco]
+
+-vectrex.xml:  Fixed some clones assignments.  [m4st4]
+
+-gameking.xml:  added TimeTop GameKing cart list.  [Porchy]
+
+-timex.xml: added software list for Timex DOCK carts. [Fabio Priuli]
+
+-apple2.xml: added over 150 items, including many classics of
+ the platform. [R. Belmont]
+
+-Add correct data width/endianness to several software lists [Alex
+ Jackson]
 
 
 Source Changes
 --------------
--DEC Rainbow updates: [M. Burke, R. Belmont]
- * LK201 keyboard matrix hooked up and working
- * LK201 serial I/O first pass
 
--changed pmd85 driver to use callbacks instead of diserial connect() [smf]
+-sms.c: Restore selected cartridge when loading a save state for
+ the store display unit.  [Enik Land]
 
--changed poly88 driver to use callbacks instead of diserial connect() [smf]
+-apple3: Support ThunderClock Plus card. [R. Belmont]
 
--Converted x68000 keyboard into a separate serial device. This allows
- the removal of the uart hle in the driver (which didn't work, it was
- always two characters behind). diserial cannot sync with the start bit
- properly when using an external clock, so for now I've added a hack
- that is only enabled when using the MC68901 (setting the flag ignores
- the extra spurious bit that was getting shifted in). [smf]
+-mc1000.c:  Correction to the cassette input  [Emerson Costa]
 
--fixed uninitialised variables, atari st mouse works again [smf]
+-amstrad: added support for 64k, 320k, and 576k RAM sizes added
+ preliminary support for the SYMBiFACE II board [Barry Rodewald]
+ idehd: added Read Native Max Address IDE command
 
--Replicator 1 driver: [Felipe Sanches]
- * status: no sound / not working
- * general skeleton.
- * basic memory mapping
- * shift-register interfacing from PORTC writes to the LCD device
- * avr8 fuses configuration
+-Apple II updates: [R. Belmont]
+ * Added additional ROMs for TK3000
+ * Added preliminary mono/color config switch for pre-IIgs machines
+    (doesn't yet work in lo-res)
+ * Moved Laser 3000 to its own driver since it's not very Apple-like
+    and got it to boot into BASIC.
 
--pt68k4: Hooked up devices, can now read floppy disks.  [R. Belmont]
+-sms.c: Documented release years for some Brazilian SMS
+ releases.  [Enik Land]
 
--BBC Micro keyboard LED's: [Nigel Barnes]
- * added layout for keyboard LED's.
- * defined actual screen sizes.
+-apple2: add possible Laser 128EX2 ROM pending future work on
+ that series [R. Belmont]
 
--fanucs15: got the 80286 to boot correctly [Carl]
+-Laser 3000: add first-pass keyboard, 80-column text, hi-res,
+ and double hi-res graphics support [R. Belmont]
 
--c64: Fixed Magic Formel cartridge. [Curt Coder]
+-Apple II: enable language-card write on reset based on h/w
+ testing [Peter Ferrie]
 
--Hooked ACIA 6850 up to Altair 8800bt [smf]
+-dmv: added expansions slot interface. [rfka01, Sandro Ronco]
 
--a7800.c - Corrected joystick buttons assignment & minor palette notes
- cleanup.  [Robert Tuccitto]
+-dmv: added boot ROMs from 4 different boards. [rfka01]
 
--ppc640: Added modem CPU ROM. [incog]
+-Apple II: add more debugger guards around C800 bankswitch
+ [Peter Ferrie, R. Belmont]
 
--DEC Rainbow updates:
- * Removed preliminary keyboard/sound hacks [Bavarese]
- * Improved LK201 mapping (KBD13 keys, keys > F12) [Bavarese]
- * Layout LED polarity fixed [Bavarese]
- * Improved (still imperfect) bidirectional comms with LK201
-    [R. Belmont]
+-Improve Laser 128 series support; 128EX/2 now boots DOS 3.3 and
+ ProDOS. [Peter Ferrie, R. Belmont]
 
--a7800.c - Positional description for difficulty switches added.
- [Robert Tuccitto]
+-Support ProDOS-order Pascal 1.3 images [R. Belmont]
 
--compclr2: Added preliminary software list for floppy images.
- [Jim Battle, Curt Coder]
+-Apple II: Add support for the Applied Engineering TimeMaster II
+ H.O. card [R. Belmont]
 
--sms.c: Various changes:  [Enik Land]
- * adjust/add some comments
- * restore complete controller port functions to the japanese SMS
-    version
- * isolate some code to their proper consoles
- * remove FM support of the sms2kr driver
- * remove Reset button of the smsj driver
- * add emulation of the japanese Sports Pad model, required by Sports
-    Pad Soccer
- * adjust some code of other controller devices.
+-Support PET user port "CB2 Sound" device [R. Belmont]
 
--fanucs15: Added Guru Readme(tm) for Base 1 board. [Guru]
+-tapectrl.c: fixed bug where systems with multiple cassette
+ drives (e.g. PET) had no Tape Controls when no cassette was loaded in
+ the first drive. [Fabio Priuli]
 
--compclr2: Added read-only support for Compucolor Virtual Floppy
- Disk Images. [Curt Coder]
-
--ISA bus can now use its own address spaces instead of taking
- over a CPU's. [R. Belmont]
-
--pt68k4 updates: [R. Belmont]
- * Added ISA slots and a selection of cards supported by the boot ROMs
- * Added XT keyboard interface
- * Added speaker (system now beeps)
-
--indiana: preliminary hookup of ISA bus and peripherals and MFP. [R. Belmont]
-
--pc_vga: default DAC mask to 0xff, indiana now shows text [Carl]
-
--apf  [Robbbert]
- * Added -ram switch, the default is 8K, this allows most tapes to load
- * Fixed pasting of upper-case program listings
- * Added cart slot to apfimag, you must now load the BASIC cart yourself.
- * Any apfm1000 cart can be loaded into apfimag
- * Fixed bad gfx in rocket patrol and blackjack
- * Fixed space destroyer (you must choose -ram 1k)
- * Fixed last-minute regression in Space Destroyer
- * Swapped left & right keypads, so they are on the correct sides of
-   the keyboard.
- * Systems marked as Working
- * added support for CAS and CPF cassettes
- * added another bios [ranger_lennier]
- * Fixed bad dump in Basic, and added Extended Basic [ranger_lennier]
-
-clcd [smf]
- * Improved the commodore lcd mmu emulation, some software is
-   starting to work a bit [smf]
- * corrected function key mapping [smf]
- * added support for bitmap mode [smf]
-
--indiana: Added IDE controller, fixed 16-bit ISA I/O
- [R. Belmont, Carl]
-
--Apple II: Support for the Videx UltraTerm card. [R. Belmont]
-
--gameboy/gbcolor: fixed NVRAM saving. [Fabio Priuli]
-
--i8530h31 now *almost* boots or at least make some beeps,
- instead of halting because of unmapped I/O accesses, or halting
- because of a bad checksum because the ROM was loaded improperly.
- [alegend45]
-
--megadriv: Added Pioneer LaserActive v1.05 Jpn BIOS. [RetroJunkie]
-
--amstrad: Added preliminary support for the AMX mouse.
- [Barry Rodewald]
-
--gbcolor: fixed heavy gfx regression caused by my conversion of
- the LCD to be a device. [Fabio Priuli]
-
--Floppy subsystem documentation checkpoint.  Incomplete, but
- there's too many people looking at it not to push it. [O. Galibert]
-
--pc/xt/at: added basic implementation of the Programmers
- Development System ISA card.  The PDS editor software requires the
- hardware present to start up.  Some core work will need to be done to
- get any communications working, however. [Barry Rodewald]
-
--nes.c: Added support for NROM368 homebrew PCB. [Fabio Priuli]
-
--nes.c: Fixed support for BMC-12in1 PCB, based on Cah4e3's research.
+-ui.c: added shortcut commands for Tape Start and Tape Stop, by
+ default mapped to F2 and Shift+F2, respectively. This is not meant as
+ a replacement for the internal Tape Control menu, but it shall make
+ simpler the usage of game tapes in home computers. Notice that
+ REC/RWD/FWD have still to be pressed from the internal UI and that if
+ you mount multiple cassettes in a driver with multiple tape drives
+ only the first one will be controllable with these shortcuts.
  [Fabio Priuli]
 
--apple3 changes: [R. Belmont]
- * Implement correct (zp),y extended addressing.
- * Removed ProFile stub, we'll do that as a proper card later
- * Removed ROM patch now that we can specify the ACIA is
-    Rockwell-style
- * Allow -ramsize 256K or 512K
- * Both VIAs can generate IRQs now, as per schematics
- * hooked up modifier keys
- * Added speaker toggle, beep, and DAC sound.
- * Adjusted palette, confidence test color names screen is
-   now reasonable.
- * improved interrupt generation and scanline timing
- * extended addressing applies to all $x1 opcodes.  SOS
-   apps now start up.
- * rewrote keyboard handling from scratch using Curt's
-   AY-5-3600 device.  Much, much better.
- * Add save state support and initial slot hookup.
- * a non-indirect instruction located on the zero page
-   will also enable extended addressing.  Fixes Business BASIC.
- * Fix ROM test in Diagnostics and support PCPI AppliCard
- * improved save states, fixed double-hi-res drawing
- * Fixed page 2 addresses in all graphics modes, fixed
-   glitches in color hires rendering.
- * Rework extended addressing from the schematics.
- * Fixed colors in color hires mode.
- * Some cleanup, plus writes to Fxxx when write protect
-   isn't asserted go through to the underlying RAM.
+-Apple II: hook up ACIAs for Laser 128 series, remove cassette
+ for IIc and Laser. [R. Belmont]
 
--apple2/3: CFFA2 now ignores 6502 spurious reads during write
- cycles. [R. Belmont]
+-Apple II series changes: [R. Belmont]
+ * Support 1 MB expansion for Laser 128ex2
+ * Give the IIc Plus the correct drive type, but it's still unhappy
+ * Promote apple2c4 to working since it runs fine now
 
--apple2: Support another Videoterm clone, the AE Viewmaster 80.
- [R. Belmont]
+-amstrad: added Amdrum expansion card [Barry Rodewald]
 
--apple2: added games starting with "C" to the softlist. [R. Belmont]
+-amstrad: added Digiblaster printer-port device [Barry Rodewald]
 
--apple2: Support the Corvus flat-cable interface card, also used
- in the Corvus Concept. [R. Belmont]
+-a2600.c: converted Atari VCS carts to be slot devices, cleaned
+ up the implementation and removed Supercharger tapes from the main
+ system. The -cass media switch (to load the tape file) will become
+ available only when you mount the Supercharger cart. [Fabio Priuli]
 
--apple2: rewrote keyboard handling according to schematics and
- using the generic AY-3600.  [R. Belmont]
+-a7800.c progress:  [Fabio Priuli]
+ * Rewritten cart emulation to use slot devices
+ * Removed POKEY chip from the main unit since it was inside the carts
+    (of course it gets enabled when you launch a game who contained it
+    in its cart)
+ * Added support for the High Score cart as a passthru cart: when you
+    mount hiscore, a -cart2 switch will become available to mount the
+    game you want to play
+ * Properly implemented XBoarD and XM expansions as passthru carts as
+    well, so that new syntax to run dkxm.a78 is
+      mess a7800 -cart xm -cart2 path\to\games\dkxm.a78
+    High Score support for XM shall work as well.
+ * Big clean up of the driver, simplifying memory map, removing writes
+    to ROM, etc.
 
--apple2: Support the Apple II Parallel Interface Card [R. Belmont]
+-apple3: don't do color text in A2 emulation mode. [R. Belmont]
 
--apple2gs: Add support for Vulcan Gold IDE card [R. Belmont, Spk]
+-a7800: split video emulation (Atari MARIA chip) into a separate
+ device. [Fabio Priuli]
 
--apple2gs: render to rgb32, allowing palette raster tricks (e.g.
- "3200 color mode") to work. [R. Belmont]
+-altos5: Fix wrong drive type [O. Galibert]
 
--Apple drivers cleanup: [R. Belmont]
- * apple3_state is no longer an unnecessary subclass of apple2_state
- * ay3600 keyboard decoder is now independent from apple2_state
- * cleaned up some includes
+-atari400.c progress:  [Fabio Priuli]
+ * Rewritten cart emulation to use slot devices (many "mappers" do not
+    fully work yet) and unified cart handling among 8bit home computers,
+    XEGS and Atari 5200
+ * Added support for loading carts with bankswitch to all XL/XE models
+ * Added support for loading XEGS carts in Atari 8bits home computers
+    (XEGS instead will only load XEGS games until support for the
+    keyboard add-on is included)
+ * Big clean up of the driver, simplifying memory map, removing writes
+    to ROM, etc.
+ * Changed NOT_WORKING flag to IMPERFECT_GRAPHICS in 600XL, 65XE,
+    800XE and XEGS since they should now be working to the same extent
+    of the 800XL, and bugs shall be reported.
 
--Refactored the Commodore 1541/1551/1571/2031 disk drives to use
- the modern floppy system. [Curt Coder]
+-pve500.c: hooked up MB8421 RAM [FSanches]
 
--nes: added support for Multi-Discrete PCB (aka Mapper 28) used
- by Action 53 - Function 16 - Volume ONE - "Streemerz Bundle" homebrew
- multicart. [Fabio Priuli]
+-pc_vga: correct access to attribute register when PAS bit is
+ set, allows XFree86 to detect ISA VGA. [Peter Ferrie]
 
--nes: added support for PRG-only PCB (aka Mapper 218) which uses
- NT-RAM as CHR-RAM, used by nocash's game Magic Floor. [Fabio Priuli]
+-gameboy: added dump of Color GameBoy 188 in 1 multicart, and
+ partially implemented the required mapper [Team Europe, Fabio Priuli]
 
--Refactored the Commodore 2040/3040/4040 disk drives to use the
- modern floppy system. [Curt Coder]
+-apple3: refresh selected drive after the softswitches are
+ changed. [Paul Hagstrom]
 
--nes_mmc5: misc wip [Fabio Priuli]
- * hacked around the limitations of our PPU code, so to support the
-    different CHR registers
- * implemented Extended Attribute Mode (Ex1)
- * improved PRG-RAM handling
- * simplified NT-RAM handling
- * first attempt to add split screen mode, still broken
+-maria.c:
+ * Timeout rendering added. [Mike Saarna]
+ * Reorganized DMA penalties to support new rendering code [Mike Saarna, 
+    Robert Tuccitto]
 
--nes: added support for iNES 2.0 submappers [Fabio Priuli]
+-a7800.c:  [Fabio Priuli]
+ * Fixed YM2151 clock in XM expansion, thanks to info from tep392 and
+    GroovyBee
+ * Added support for homebrew boards MegaCart+ and VersaBoard by
+    CPUWIZ (ROM respectively up to 512K and 256K + 32K of RAM)
+ * Misc cleanups
 
--nes_irem.c: fixed Ai Sensei no Oshiete, based on hardware doc
- by naruko [Fabio Priuli]
+-thomson: improve accuracy of the colors [Antoine Mine]
 
--amstrad: Added a basic implementation of the Programmers Development
- System hardware for the CPC.  Only lacks a way to set up a parallel
- connection between MESS instances to enable PC<->CPC communication. 
- [Barry Rodewald]
+-Added the following video card BIOSes: [rfka01, Barry Rodewald]
+ s3_764:   S3 9503-62 (not working) Elsa Winner 1000/T2D
+ s3virge:  S3 ViRGE BIOS v1.00-10 mach64:   ATi mach64V1 113-34404-104
 
--nes_bandai: documented differences between FCG-1/FCG-2 boards
- and LZ93D50 ones, based on analysis by naruko. [Fabio Priuli]
+-Apple II: Support Apple II Mouse Card [R. Belmont, Guru, Sharkpuncher]
 
--Removed PET CB1 read handler, it is pushing vsync to it already. [smf]
+-apple3: invert enable1 sense, external drive selection now
+ works properly. [R. Belmont]
 
--nes_bandai: added emulation of the barcode reader for Datach
- Joint ROM System unit, making playable most games using it.
+-megadriv.c: Added support for Game Genie as a passthru cart.
  [Fabio Priuli]
 
--nes: Properly implemented the Bandai Datach as a passthru cart.
- Datach games have now to be loaded with the following commands "mess
- nes -cart datach -cart2 gamename" where gamename can be either a
- shortname from the datach softlist, or a fullpath to the iNES files
- (or to headerless 256k dump of the Datach minicarts). This is accurate
- to the hardware, because Datach carts could not be mounted in the main
- Famicom cartridge slot. [Fabio Priuli]
+-Even better apple3 drive select. [Paul Hagstrom]
 
--gl3000s: added LCD and keyboard emulation. [Sandro Ronco]
+-sms.c: Fixed lphaser regression.  [Enik Land]
 
--spc1000 [Miso Kim, Robbbert]
- * added IRQ which enables cursor flash & internal timer
- * added TAP cassette format
- * added paste facility, fixed cursor flash
- * fixed corrupted lower-case display
+-sms.c: Prevent vdp register 6 contents from being overwritten
+ while a line is being drawn. Fixes title screen in backtof3. 
+ [Enik Land, Wilbert Pol]
 
--nes: added Karaoke Studio inputs, mapped to keys Z, X, C. you
- can now select songs and see the animation, even if I would not call
- playable the games this way. [Fabio Priuli]
+-sms.c: Fixed graphics glitch in E-Swat atttact mode on the smsj
+ driver and some small cleanups. [Enik Land]
 
--Added BIOS from Midnight Blue PlayStation <10 million model>
- SCPH-7000W [smf, Myria]
-
--added SUBCPU address space dump from US PlayStation
- [smf, psxdev.ru]
-
--PC-9801 / upd7220: Fixed Quarth video paging [Angelo Salese]
-
--pc: Added support for NASLite 1.72MB disk images. [Curt Coder]
-
--pc: Added support for Microsoft DMF 1.68MB disk images.
- [Curt Coder]
-
--a7800.c - Added more details and clarification regarding the
- potentiometer. [Robert Tuccitto]
-
--machine\megadriv.c - Fixes segfault when trying to load the
- homebrew megadrive tutorial file "firststeps".  [Felipe Sanches]
-
--nes: properly implemented Aladdin Deck Enhancer as a
- pass-through cart. Correct syntax to launch e.g. Dizzy The Adventurer
- is now "mess nes -cart ade -cart2 dizzyadv". Moved Aladdin minicart
- dumps to a separate softlist (but you can load in -cart2 iNES files
- from fullpath, if you like) [Fabio Priuli] nes_camerica: simplified
- emulation of the BF9096 board and fixed emulation of GoldenFive board
- (used by the Polish Pegasus 5 in 1 cart). [Fabio Priuli]
-
--nes: improved Tengen 800032 (RAMBO-1) IRQ mechanism, based on
- the new findings from nesdev boards. Hard Drivin' proto is a lot more
- playable. [Fabio Priuli]
-
--rainbow: added IRQ management framework and vector control.
- [R. Belmont, Bavarese]
-
--Start removing usage of deprecated 68681 INPORT_CALLBACK.
+-apple3: preliminary hook up of slot IRQ and NMI lines.
  [R. Belmont]
 
--sgi_ip2: converted to new 68681 and serial terminal [R. Belmont]
-
--sorcerer : added .TAPE cassette format [Robbbert]
-
--apollo: Start modernizing/cleanup. [R. Belmont]
-
--ql.c - Fixed up communication between main 68008 CPU and 8048
- IPC so that making sound does not crash the machine. 
- [Phill Harvey-Smith]
-
--More apollo updates [R. Belmont]
- * Old 68681 is gone
- * Apollo keyboard now speaks diserial
- * Headless configs use the serial terminal device
-
--floppy: Fix write over the index pulse and flux change lookup
- before it [O. Galibert]
-
--apple2: ProDOS now correctly sees empty slots as empty.
+-Stop trashing DiskCopy 4.2 images that don't have tags.
  [R. Belmont]
 
--cat.c: Canon Cat now has working sound [Lord Nightmare, R. Belmont]  
+-famicom: converted the disk system add-on to be a cart in the
+ softlist. The official syntax to launch disk games is now
+   mess famicom -cart disksys -flop gamename
+ which corresponds to inserting the RAM expansion cart with connected 
+ the disk drive into the cartslot and the desired disk in the disk 
+ drive (exactly like you would have done with the real thing). In this
+ way, you cannot mount anymore both a cart and a disk in the Family 
+ Computer (as in a real unit). Users that cannot cope with this
+ limitation and/or with the new syntax can still use the famitwin
+ driver (which offers both cart and disk options) or the newly added
+ driver fds which emulates a famicom with the expansion always inserted:
+ in both latter cases the old syntax
+   mess famitwin -flop gamename
+ will launch the game, as previously. [Fabio Priuli]
 
--cat.c: Updated swyft related notes/comments from tracing [Lord Nightmare]
+-famicom: fixed disk system IRQ latch clear in Kaettekita Mario
+ Bros. based on investigations by FHorse. [Fabio Priuli]
 
--microbee : added support for TAP and BEE formats (used in
- ubee512 emulator) [Robbbert]
+-sb16: Add Soundblaster 16 low level emulation [Carl, Malice, O. Galibert]
 
--cat: preliminary Centronics hookup [R. Belmont]
+-Fixed issue with messtiny build (additional bioses are no
+ longer separate sets).  [m4st4]
 
--apollo: More cleanup, devlegcy.h now gone. [R. Belmont]
+-sms.c: Small improvements to the latching of some registers.
+ Fixes flicker in Power Strike 2.  [Enik Land]
 
--apollo: Cleaned up PIC8259 usage. [R. Belmont]
+-tsispch.c - Add v1.1 firmware to TSI/Speech Plus Prose 2000
+ driver [Lord Nightmare]
 
--SOL20 : added partial support for SVT format (used in Solace emulator) [Robbbert]
+-concept: fix keyboard status to not return junk data, fixes
+ bootup without -debug. [R. Belmont]
 
--sms: accurately emulated the behavior when mounting both a cart
- and a card in the system, cleaned up RAM accesses, simplified code
- handling cart/card/exp enable. [Enik Land]
+-concept: hooked up actual 6551 for keyboard, added beeper,
+ cleaned up driver. [R. Belmont]
 
--cat.c: updated comments with latest research. [Lord Nightmare]
+-cbm8296ed: Added ROM signatures for Oracle 3.03.
+ [Mike Naberezny]
 
--m5: Mirror input ports, allows new dump "Jankyo" to run. [R. Belmont, Ola Andersson]
+-itt3030: additional FDC hookup, now tries and fails to boot.
+ [R. Belmont]
 
--hisaturn: added v1.02 BIOS [zyrobs]
+-concept: Hook up Apple II bus. [R. Belmont]
 
--apollo: Converted to use real ISA bus [R. Belmont] 
+-svi318.c: cleaned up the driver and added support for save
+ states. [Fabio Priuli]
 
--cat.c: Implemented watchdog counter readback, more
- documentation [Lord Nightmare]
+-advision.c: cleaned up the driver and added support for save
+ states. [Fabio Priuli]
 
--cat.c: invert centronics BUSY (still need to add the /ACK
- flipflop) [Lord Nightmare, smf]
+-added PC-9821AP2/U8W BIOS. [caius]
 
--cat.c: hooked up centronics /ACK flipflop; still doesn't seem
- to print, though. [Lord Nightmare]
+-softbox: Added BIOS revision 8/9/81. [Nils Eilers, Mike Naberezny]
 
--apollo: sc499 cartridge tape converted to ISA [R. Belmont]
+-amust: added newly-dumped keyboard rom [ejwords, MSPP]
 
--a7800.c - Support for >128k cart formats and banked RAM and
- added bit 4 & bit 5 notes while standardizing 'super' description
- listing.  [Mike Saarna]
+-thomson - fixes for a non-standard video mode and adding a new
+ one [Antoine Mine]
 
--rainbow.c: Added 8 sector format to legacy driver.  Included
- early '100-A' model with brief descriptions and placeholders for dumps
- not yet obtained.  [Bavarese].
+-gba.c: fixed Top Gun - Combat Zones cart type, making the game
+ playable. [Reznor007]
 
--vtvideo.c: First steps to mimic soft scrolling. Should be
- synchronized with beam or DMA in the future.  [Bavarese]
+-concept: Preliminary implementations of the original and
+ buffered floppy disk controllers. [R. Belmont]
 
--apollo: Separate 3c505 out into an ISA16 card. [R. Belmont]
+-portfolio: only trigger interrupts when the 8250 asserts the
+ line, not when it clears it. [smf]
 
--adam: Added ColecoVision control port slot interface along with
- the ColecoVision hand controller. [Curt Coder]
+-floppy.c: fixed disks not being launched if loaded from
+ softlist through File Manager. [Fabio Priuli]
 
--pve500.c:  New maincpu dump to replace bad dump.  [Felipe Sanches]
+-315_5124.c: Refactored sprite handling, fixes status bar on Tarzan for
+ gaemgear. Removed m_collission_buffer member variable. Tweaked game
+ gear timing to fix glitches in status bar of Chicago Syndicate for
+ gamegear.  [Enik Land]
 
--softbox: Added preformatted 10MB hard disk image. [Curt Coder]
+-concept: Misc fixes/cleanup, CCOS boots now from 8" floppies.
+ [R. Belmont]
 
--snapquik.c: stop unloading snapshot/quickload images after
- start. this makes these image devices consistent with other image
- devices and it allows snapname and savename options to work as users
- expect with these formats too. [Fabio Priuli]
+-concept: Add 5.25" DSDD raw image support and preliminary
+ pseudo-DMA to buffered controller. [R. Belmont]
 
--sms.c: fixed behavior of the TH pin in the Japanese SMS
- consoles. [Enik Land]
+-saturn: made RAM / Backup RAM expansion internal slot options.
+ you now mount these with the -cart media switch, i.e. for instance
+   mess saturn -cdrm ddsom -cart ram32
+ or
+   mess saturn -cdrm draculax -cart bram16
+ and not anymore using the -exp option. [Fabio Priuli]
 
--fanucspmg: corrected text mode font. [O. Galibert]
+-concept: can boot 5.25" disks on fdc02 now. [crazyc]
 
--Fix for Thomson MO6 banking, now more faithful to the hardware [Antoine Mine]
+-msx.c: Added release years for several systems.  [AntoPISA]
 
--Preliminary driver support for the HP 49 G [Antoine Mine]
+-gameboy, gbcolor: added a configuration setting (off by
+ default) to skip BIOS checks at boot. This allows the recently dumped
+ Rockman World Prototype to be played, and the Rocket Games pirate GBC
+ carts too. [Fabio Priuli]
 
--sms: fixed light phaser support through the gender adapter and
- adopted RAM init pattern on Export consoles too (Korean systems are
- acknowledged as Export and some Korean games rely on this) [Enik Land]
+-gba: added a configuration setting (off by default) to skip some BIOS
+ checks at boot. This allows Tyrian 2000 Prototype to be played. [Fabio
+ Priuli]
 
--N64 RSP changes: [MooglyGuy]
- * Added SIMUL_SIMD flag for easy finding of bugs in SIMD opcodes
- * Fixed SIMD versions of SSV, SLV, SDV, STV, VSUB, VADDC, VSUBC, and
-    VGE
- * Removed SIMD optimizations from VMACF, VMADL, VMADN, as they were
-   provided by the CEN64 author but do not appear to have the same
-   results as MESS's scalar implementations, and so are not trustworthy
+-apple2: IIe and later don't require double-reads on the
+ language card. [R. Belmont, Peter Ferrie]
 
--mu100: Main screen turn on [O. Galibert]
+-odyssey2: converted the driver to use slot devices for cartridges,
+ removed The Voice add-on from the main system and emulated it as
+ a passthru cart instead. Now, if you want to enjoy speech in
+ odyssey/videopac games, you must launch emulation with 
+   mess odyssey2 -cart voice -cart2 gamename
+ (the -cart2 switch becomes available when "voice" is mounted in
+ the first cartslot) [Fabio Priuli]
 
--a7800.c: Fixed DMA regarding startup, shutdown and cycle
- stealing which fixes numerous recorded MAMETester bugs.  Bug fixed and
- fine tuned the DMA timing.  Corrected RIOT timing  [Mike Saarna]
+-intv: converted the driver to use slot devices for cartridges
+ and implemented the IntelliVoice expansion and the Entertainment
+ Computer System expansion as passthru devices. The official syntax to
+ launch games requiring the speech expansion is now
+   mess intv -cart voice -cart2 gamename
+ which corresponds to mounting the IntelliVoice and plugging the game
+ cart in its subslot.  The official syntax to launch games requiring
+ the ECS expansion is now instead
+   mess intv -cart ecs -cart2 gamename
+ and
+   mess intv -cart ecs -cart2 voice -cart3 gamename
+ if the game requires both expansions at once. For additional user
+ friendliness, we also offer intvecs (which emulates an Intellivision
+ unit with both expansions added) and intvoice (which emulates an
+ Intellivision with Intellivoice expansion added) drivers, where games
+ can simply be mounted with the -cart media switch. [Fabio Priuli]
 
--ql.c:  Added emulation of both the QIMI and Sandy mice to the
- QL driver as well as adding support of those to the Sandy SuperQBoard.
- Moved the selection of the mouse and disk interface from dip switches
- to config, as this seemed more appropriate.  [Phill-Harvey-Smith]
+-msx.c: Added support for DMK floppy images.  [Wilbert Pol]
 
--sms: fixed Korean Gam*Boy 2 being detected as a Japanese
- machine when a real unit does not. [Enik Land]
+-maria.c: improved DMA accuracy. [Mike Saarna, Robert Tuccitto]
+ * Last Line DMA value corrected to 6. GCC and Atari docs both show a
+    difference between Other Line and Last Line as +6 at the lowest
+    part of the range.
+ * Blank scanlines are drawn when DMA is off, like real hardware.
+ * If MARIA hits the DMA limit, the CPU doesn't run until the next
+    scanline.
 
--pet: Added the "Fat 40" PET/CBM 4032 models. Check out "No Pets
- Allowed" by Orb to see them and the new mc6845 functionality in
- action. [Curt Coder]
+-vic20: Emulated the Final Expansion 3 cartridge (only
+ RAM/FlashROM supported). [Curt Coder]
 
--spectrum updates  [MetalliC]
- * BetaDisk fixed (there was just needed to start floppy motor ;)   
- * Pentagon: fixed 7FFD port addressing; CPU clock fixed; adjusted
-    VBLANK IRQ timing (border effects works fine now);
- * Scorpion: fixed ports addressing; both machines marked as working.
-    Notes:
- * there are still issues with BetaDisk - for unk reason wrong
-    commands passed  to WD17xx (imho ROM switching works somehow
-    wrong), but anyway with  write protected disk images it works
-    more-less fine - files from disks loaded OK;
- * Pentagon1024 randomly crashes then selecting "GLUK BOOT", maybe also
-   coz of rom switching.
+-spc1000: added fdd code [Meso Kim]
 
--smssdisp: fixed slot recognition so that now the system boots
- the game from the first occupied slot it finds and not only slot 1.
- [Enik Land]
+-sms.c: Misc fixes:  [Enik Land]
+ * Disable gamegear sio register when in ggsms mode
+ * Fixed tilemap mirroring on sms1 vdp needed for Japanese version of Ys
+ * Fixed BIOS support in the gamegear driver
+ * Fixed collisions when column #0 is disabled
 
--pce_cd: fixed MSM volume. [Osso]
-
--a7800.c:  [Mike Saarna]
- * Fixed number of scanlines to accurately reflect hardware testing
-    and schematics (262-->263 NTSC and 312-->313 PAL).
- * Additional fix to timing of Maria cycles and comments.
- * Fixed INPTCTRL register implementation to match hardware. 
-    Diagnostic Test Cart now works.
- * Corrected ROM_FILL.
-
--a7800.c - Numerous Improvements/bugfixes:
- * Proper calibration per Diagnostic cart [Mike Saarna]
- * PAL RIOT fixed. [Mike Saarna]
- * Corrected SYNC timing to match later GCC tech doc and measurements
-    against real hw [Mike Saarna]
- * Fix to bug that causes skip to first DLL if its 1 scanline tall. [Mike Saarna]
- * Fixed total horiz pixels to better match hw testing results and
-    tech docs.  Fixed rendering to ensure DMA stolen cycles. [Mike Saarna]
- * Fixes reading of controller port behavior when held high by RIOT
-    chip [Mike Saarna]
- * Normalize horizontal frequency while maintaining same net cycles.
-    [Robert Tuccitto]
- * Fixed a few remaining issues while keeping to documented tech specs
-     and ranges. [Mike Saarna/Robert Tuccitto]
- * Correct fix to Maria cycles regarding DMA Shutdown short/other line
-     shutdown. [Mike Saarna/Robert Tuccitto]
-
--Attempt to partially rewrite AAKART, and added 4bpp video mode
- for Acorn Archimedes. It now boots at prompt screen, and actually even
- boots into splash screen and dies almost soon with an error if you
- provide a properly initialized NVRAM. [Angelo Salese]
-
--saturn: added default formatting to Backup RAM carts, so that
- games can be saved in the expansion without passing through the
- console menu the first time the expansion is used [Fabio Priuli]
-
--Improving emulation of SONY PVE-500 video editing station [Felipe Sanches]
-
--bbc: fixed external cart slot -cart1 for the BBC Master (demo cart
- runs properly now), added second external slot -cart2 (same functionality
- as -cart1). Expansion ROM slots, which are handled as internal cart slot, 
- are now accessible via -cart3/-cart6 media switch, until they are converted 
- to proper slot devices. [Fabio Priuli]
-
--ti99: [Michael Zapf]
- * Switched to modern floppy system for TI floppy controller and BwG.
- * Switched to devcb2 throughout ti99 family.
- * Fixed several bugs in HSGPL
-
--esqmr: Dumped wave and 68HC705 MCU ROMs. [Guru, R. Belmont]
+-gamegear: added preliminary emulation of the Master Gear
+ Adapter which allows to launch SMS games in the gamegear driver, with
+ video chip in SMS mode. You can try this by launching
+   mess.exe gamegear -cart mgear -cart2 your_sms_game
+ (the -cart2 switch becomes available when you mount "mgear" in the
+ main gamegear cart slot) [Fabio Priuli]
 

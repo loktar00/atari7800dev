@@ -69,29 +69,38 @@
 main
   restorescreen
 
-  player1posX = (playerx[0]+8)/8
-  player1posY = (playery[0]+4)/16
+  player1posX = (playerx[0]-4)/8
+  player1posY = (playery[0]-8)/16
+  tempplayerx = (playerx[0]+4)/8
+  tempplayery = (playery[0])/16
+  
+  pokechar screendata tempplayerx player1posY 20 11 3
 
-  rem *pokechar screendata player1posX player1posY 20 11 3
+  rem North Check
+  player1CharS = peekchar(screendata, player1posX, player1posY, 20,11)
 
-  tempplayery = player1posY + 1
-  player1CharS = peekchar(screendata, player1posX, tempplayery, 20,11)
+  rem South CHeck
+  player1posY = (playery[0]+24)/16
+  player1CharN = peekchar(screendata, player1posX, player1posY, 20,11)
 
-  tempplayery = player1posY - 1
-  player1CharN = peekchar(screendata, player1posX, tempplayery, 20,11)
+  pokechar screendata tempplayerx player1posY 20 11 3
 
-  tempplayerx = player1posX - 1
-  player1CharW = peekchar(screendata, tempplayerx, player1posY, 20,11)
+  rem West Check
+  player1CharW = peekchar(screendata, player1posX, tempplayery, 20,11)
 
-  tempplayerx = player1posX + 1
-  player1CharE = peekchar(screendata, tempplayerx, player1posY, 20,11)
+  pokechar screendata player1posX player1posY 20 11 3
 
-  if joy0down && playery[0] < 144 && player1CharS = 0 then playery[0]=playery[0]+1:goto donePlayerWalk
-  if joy0up && playery[0] > 16  && player1CharN = 0 then playery[0]=playery[0]-1:goto donePlayerWalk
+  rem East Check
+  player1posX = (playerx[0]+16)/8
+  player1CharE = peekchar(screendata, player1posX, player1posY, 20,11)
 
-  if joy0left && playerx[0] > 8  && player1CharW = 0 then playerx[0]=playerx[0]-1:goto donePlayerWalk
-  if joy0right && playerx[0] < 136  && player1CharE = 0 then playerx[0]=playerx[0]+1:goto donePlayerWalk
+  pokechar screendata player1posX tempplayery 20 11 3
 
+  if joy0down && playery[0] < 144 then playery[0]=playery[0]+1:goto donePlayerWalk
+  if joy0up && playery[0] > 16 then playery[0]=playery[0]-1:goto donePlayerWalk
+
+  if joy0left && playerx[0] > 8  then playerx[0]=playerx[0]-1:goto donePlayerWalk
+  if joy0right && playerx[0] < 136 then playerx[0]=playerx[0]+1:goto donePlayerWalk
 
 donePlayerWalk
 
@@ -108,16 +117,16 @@ donePlayerWalk
  alphachars ' abcdefghijklmnopqrstuvwxyz'
 
  alphadata defaultMap tileset_level
- 'cbcbcbcbcbcbcbcbcbcb'
- 'c                  b'
- 'c  bc  bc  bc  bc  b'
- 'c                  b'
- 'c  bc  bc  bc  bc  b'
- 'c                  b'
- 'c  bc  bc  bc  bc  b'
- 'c                  b'
- 'c  bc  bc  bc  bc  b'
- 'c                  b'
- 'cbcbcbcbcbcbcbcbcbcb'
+ '                    '
+ '                    '
+ '                    '
+ '                    '
+ '                    '
+ '                    '
+ '                    '
+ '                    '
+ '                    '
+ '                    '
+ '                    '
 end
 

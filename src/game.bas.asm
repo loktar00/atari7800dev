@@ -384,46 +384,71 @@ plotcharactersloop1
 .
  ; 
 
-.L051 ;  player1posX  =   ( playerx[0] + 8 )  / 8
+.L051 ;  player1posX  =   ( playerx[0] - 4 )  / 8
 
 ; complex statement detected
 	LDX #0
 	LDA playerx,x
-	CLC
-	ADC #8
+	SEC
+	SBC #4
 	lsr
 	lsr
 	lsr
 	STA player1posX
-.L052 ;  player1posY  =   ( playery[0] + 4 )  / 16
+.L052 ;  player1posY  =   ( playery[0] - 8 )  / 16
 
 ; complex statement detected
 	LDX #0
 	LDA playery,x
-	CLC
-	ADC #4
+	SEC
+	SBC #8
 	lsr
 	lsr
 	lsr
 	lsr
 	STA player1posY
-.
- ; 
+.L053 ;  tempplayerx  =   ( playerx[0] + 4 )  / 8
 
-.L053 ;  rem *pokechar screendata player1posX player1posY 20 11 3
-
-.
- ; 
-
-.L054 ;  tempplayery  =  player1posY  +  1
-
-	LDA player1posY
+; complex statement detected
+	LDX #0
+	LDA playerx,x
 	CLC
-	ADC #1
-	STA tempplayery
-.L055 ;  player1CharS  =  peekchar ( screendata ,  player1posX ,  tempplayery ,  20 , 11 ) 
+	ADC #4
+	lsr
+	lsr
+	lsr
+	STA tempplayerx
+.L054 ;  tempplayery  =   ( playery[0] )  / 16
 
-    ldy tempplayery
+; complex statement detected
+	LDX #0
+	LDA playery,x
+	lsr
+	lsr
+	lsr
+	lsr
+	STA tempplayery
+.
+ ; 
+
+.L055 ;  pokechar screendata tempplayerx player1posY 20 11 3
+
+    ldy player1posY
+    lda screendata_mult_lo,y
+    sta temp1
+    lda screendata_mult_hi,y
+    sta temp2
+    ldy tempplayerx
+    lda #3
+    sta (temp1),y
+.
+ ; 
+
+.L056 ;  rem North Check
+
+.L057 ;  player1CharS  =  peekchar ( screendata ,  player1posX ,  player1posY ,  20 , 11 ) 
+
+    ldy player1posY
     lda screendata_mult_lo,y
     sta temp1
     lda screendata_mult_hi,y
@@ -434,15 +459,23 @@ plotcharactersloop1
 .
  ; 
 
-.L056 ;  tempplayery  =  player1posY  -  1
+.L058 ;  rem South CHeck
 
-	LDA player1posY
-	SEC
-	SBC #1
-	STA tempplayery
-.L057 ;  player1CharN  =  peekchar ( screendata ,  player1posX ,  tempplayery ,  20 , 11 ) 
+.L059 ;  player1posY  =   ( playery[0] + 24 )  / 16
 
-    ldy tempplayery
+; complex statement detected
+	LDX #0
+	LDA playery,x
+	CLC
+	ADC #24
+	lsr
+	lsr
+	lsr
+	lsr
+	STA player1posY
+.L060 ;  player1CharN  =  peekchar ( screendata ,  player1posX ,  player1posY ,  20 , 11 ) 
+
+    ldy player1posY
     lda screendata_mult_lo,y
     sta temp1
     lda screendata_mult_hi,y
@@ -453,13 +486,7 @@ plotcharactersloop1
 .
  ; 
 
-.L058 ;  tempplayerx  =  player1posX  -  1
-
-	LDA player1posX
-	SEC
-	SBC #1
-	STA tempplayerx
-.L059 ;  player1CharW  =  peekchar ( screendata ,  tempplayerx ,  player1posY ,  20 , 11 ) 
+.L061 ;  pokechar screendata tempplayerx player1posY 20 11 3
 
     ldy player1posY
     lda screendata_mult_lo,y
@@ -467,122 +494,147 @@ plotcharactersloop1
     lda screendata_mult_hi,y
     sta temp2
     ldy tempplayerx
+    lda #3
+    sta (temp1),y
+.
+ ; 
+
+.L062 ;  rem West Check
+
+.L063 ;  player1CharW  =  peekchar ( screendata ,  player1posX ,  tempplayery ,  20 , 11 ) 
+
+    ldy tempplayery
+    lda screendata_mult_lo,y
+    sta temp1
+    lda screendata_mult_hi,y
+    sta temp2
+    ldy player1posX
     lda (temp1),y
 	STA player1CharW
 .
  ; 
 
-.L060 ;  tempplayerx  =  player1posX  +  1
-
-	LDA player1posX
-	CLC
-	ADC #1
-	STA tempplayerx
-.L061 ;  player1CharE  =  peekchar ( screendata ,  tempplayerx ,  player1posY ,  20 , 11 ) 
+.L064 ;  pokechar screendata player1posX player1posY 20 11 3
 
     ldy player1posY
     lda screendata_mult_lo,y
     sta temp1
     lda screendata_mult_hi,y
     sta temp2
-    ldy tempplayerx
+    ldy player1posX
+    lda #3
+    sta (temp1),y
+.
+ ; 
+
+.L065 ;  rem East Check
+
+.L066 ;  player1posX  =   ( playerx[0] + 16 )  / 8
+
+; complex statement detected
+	LDX #0
+	LDA playerx,x
+	CLC
+	ADC #16
+	lsr
+	lsr
+	lsr
+	STA player1posX
+.L067 ;  player1CharE  =  peekchar ( screendata ,  player1posX ,  player1posY ,  20 , 11 ) 
+
+    ldy player1posY
+    lda screendata_mult_lo,y
+    sta temp1
+    lda screendata_mult_hi,y
+    sta temp2
+    ldy player1posX
     lda (temp1),y
 	STA player1CharE
 .
  ; 
 
-.L062 ;  if joy0down  &&  playery[0]  <  144  &&  player1CharS  =  0 then playery[0] = playery[0] + 1 : goto donePlayerWalk
+.L068 ;  pokechar screendata player1posX tempplayery 20 11 3
+
+    ldy tempplayery
+    lda screendata_mult_lo,y
+    sta temp1
+    lda screendata_mult_hi,y
+    sta temp2
+    ldy player1posX
+    lda #3
+    sta (temp1),y
+.
+ ; 
+
+.L069 ;  if joy0down  &&  playery[0]  <  144 then playery[0] = playery[0] + 1 : goto donePlayerWalk
 
  lda #$20
  bit SWCHA
-	BNE .skipL062
+	BNE .skipL069
 .condpart0
 	LDX #0
 	LDA playery,x
 	CMP #144
      BCS .skip0then
 .condpart1
-	LDA player1CharS
-	CMP #0
-     BNE .skip1then
-.condpart2
 	LDX #0
 	INC playery,x
  jmp .donePlayerWalk
 
-.skip1then
 .skip0then
-.skipL062
-.L063 ;  if joy0up  &&  playery[0]  >  16  &&  player1CharN  =  0 then playery[0] = playery[0] - 1 : goto donePlayerWalk
+.skipL069
+.L070 ;  if joy0up  &&  playery[0]  >  16 then playery[0] = playery[0] - 1 : goto donePlayerWalk
 
  lda #$10
  bit SWCHA
-	BNE .skipL063
-.condpart3
+	BNE .skipL070
+.condpart2
 	LDA #16
 	LDX #0
 	CMP playery,x
-     BCS .skip3then
-.condpart4
-	LDA player1CharN
-	CMP #0
-     BNE .skip4then
-.condpart5
+     BCS .skip2then
+.condpart3
 	LDX #0
 	DEC playery,x
  jmp .donePlayerWalk
 
-.skip4then
-.skip3then
-.skipL063
+.skip2then
+.skipL070
 .
  ; 
 
-.L064 ;  if joy0left  &&  playerx[0]  >  8  &&  player1CharW  =  0 then playerx[0] = playerx[0] - 1 : goto donePlayerWalk
+.L071 ;  if joy0left  &&  playerx[0]  >  8 then playerx[0] = playerx[0] - 1 : goto donePlayerWalk
 
  bit SWCHA
-	BVS .skipL064
-.condpart6
+	BVS .skipL071
+.condpart4
 	LDA #8
 	LDX #0
 	CMP playerx,x
-     BCS .skip6then
-.condpart7
-	LDA player1CharW
-	CMP #0
-     BNE .skip7then
-.condpart8
+     BCS .skip4then
+.condpart5
 	LDX #0
 	DEC playerx,x
  jmp .donePlayerWalk
 
-.skip7then
-.skip6then
-.skipL064
-.L065 ;  if joy0right  &&  playerx[0]  <  136  &&  player1CharE  =  0 then playerx[0] = playerx[0] + 1 : goto donePlayerWalk
+.skip4then
+.skipL071
+.L072 ;  if joy0right  &&  playerx[0]  <  136 then playerx[0] = playerx[0] + 1 : goto donePlayerWalk
 
  bit SWCHA
-	BMI .skipL065
-.condpart9
+	BMI .skipL072
+.condpart6
 	LDX #0
 	LDA playerx,x
 	CMP #136
-     BCS .skip9then
-.condpart10
-	LDA player1CharE
-	CMP #0
-     BNE .skip10then
-.condpart11
+     BCS .skip6then
+.condpart7
 	LDX #0
 	INC playerx,x
  jmp .donePlayerWalk
 
-.skip10then
-.skip9then
-.skipL065
-.
- ; 
-
+.skip6then
+.skipL072
 .
  ; 
 
@@ -592,22 +644,22 @@ plotcharactersloop1
 .
  ; 
 
-.L066 ;  for z = 0 to 3
+.L073 ;  for z = 0 to 3
 
 	LDA #0
 	STA z
-.L066forz
-.L067 ;  tempplayerx  =  playerx[z]
+.L073forz
+.L074 ;  tempplayerx  =  playerx[z]
 
 	LDX z
 	LDA playerx,x
 	STA tempplayerx
-.L068 ;  tempplayery  =  playery[z]
+.L075 ;  tempplayery  =  playery[z]
 
 	LDX z
 	LDA playery,x
 	STA tempplayery
-.L069 ;  q =  ( z & 3 )  + 1
+.L076 ;  q =  ( z & 3 )  + 1
 
 ; complex statement detected
 	LDA z
@@ -615,7 +667,7 @@ plotcharactersloop1
 	CLC
 	ADC #1
 	STA q
-.L070 ;  plotsprite bombman_f_1 q tempplayerx tempplayery
+.L077 ;  plotsprite bombman_f_1 q tempplayerx tempplayery
 
     lda #<bombman_f_1
     sta temp1
@@ -643,62 +695,41 @@ plotcharactersloop1
     sta temp6
 
  jsr plotsprite
-.L071 ;  next
+.L078 ;  next
 
 	LDA z
 	CMP #3
 
 	INC z
- if ((* - .L066forz) < 127) && ((* - .L066forz) > -128)
-	bcc .L066forz
+ if ((* - .L073forz) < 127) && ((* - .L073forz) > -128)
+	bcc .L073forz
  else
-	bcs .0skipL066forz
-	jmp .L066forz
-.0skipL066forz
+	bcs .0skipL073forz
+	jmp .L073forz
+.0skipL073forz
  endif
 .
  ; 
 
-.L072 ;  drawscreen
+.L079 ;  drawscreen
 
  jsr drawscreen
-.L073 ;  goto main
+.L080 ;  goto main
 
  jmp .main
 
 .
  ; 
 
-.L074 ;  alphachars ' abcdefghijklmnopqrstuvwxyz'
+.L081 ;  alphachars ' abcdefghijklmnopqrstuvwxyz'
 
 .
  ; 
 
-.L075 ;  alphadata defaultMap tileset_level
+.L082 ;  alphadata defaultMap tileset_level
 
-	JMP .skipL075
+	JMP .skipL082
 defaultMap
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
@@ -717,28 +748,16 @@ defaultMap
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
@@ -757,28 +776,16 @@ defaultMap
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
@@ -797,28 +804,16 @@ defaultMap
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
@@ -837,28 +832,16 @@ defaultMap
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
@@ -877,28 +860,97 @@ defaultMap
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
  .byte (<tileset_level + $00)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
- .byte (<tileset_level + $06)
- .byte (<tileset_level + $04)
-.skipL075
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+ .byte (<tileset_level + $00)
+.skipL082
 .
  ; 
 

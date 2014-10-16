@@ -15902,7 +15902,7 @@ List of unconfirmed retail cartridge roms
 
 	<software name="owarai">
 		<!-- Notes: SGB enhanced -->
-		<description>Owarai Yowiko no Game-dou - Oyaji Sagashite Sanchoume (Jpn)</description>
+		<description>Owarai Yoiko no Geemumichi - Oyaji Sagashite 3-Choume (Jpn)</description>
 		<year>1999</year>
 		<publisher>Konami</publisher>
 		<info name="serial" value="DMG-AYIJ-JPN (RK194-J1)"/>
@@ -23273,11 +23273,12 @@ Rocket Games
 These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 -->
 
-	<software name="atvrackj" supported="no">
+	<software name="atvrackj" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>ATV Racing &amp; Karate Joe (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="524288">
@@ -23288,11 +23289,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="atvrackja" cloneof="atvrackj" supported="no">
+	<software name="atvrackja" cloneof="atvrackj" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>ATV Racing &amp; Karate Joe (Euro, Alt)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="524288">
@@ -23303,10 +23305,11 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="atvracin" supported="no">
+	<software name="atvracin">
 		<description>ATV Racing (Euro)</description>
 		<year>2001</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="262144">
@@ -23317,11 +23320,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="fullhang" supported="no">
+	<software name="fullhang" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>Full Time Soccer &amp; Hang Time Basketball (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="524288">
@@ -23332,10 +23336,11 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="fulltime" supported="no">
+	<software name="fulltime">
 		<description>Full Time Soccer (Euro)</description>
 		<year>2000</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="262144">
@@ -23346,24 +23351,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-<!-- This has been hacked to run on MBC01 mapper -->
-	<software name="fulltimeh" cloneof="fulltime">
-		<description>Full Time Soccer (Euro, Hacked)</description>
-		<year>2000</year>
-		<publisher>Rocket Games</publisher>
-		<part name="cart" interface="gameboy_cart">
-			<feature name="slot" value="rom_mbc1" />
-			<dataarea name="rom" size="262144">
-				<rom name="full time soccer (hacked) (unl).bin" size="262144" crc="655476f9" sha1="0d6c5f931223ea393a3f6bc1ecd1a18c1f889273" offset="000000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="hangtime" supported="no">
+	<software name="hangtime">
 		<!-- Notes: GBC only -->
 		<description>Hang Time Basketball (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="262144">
@@ -23374,11 +23367,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="pocksmrt" supported="no">
+	<software name="pocksmrt" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>Pocket Smash Out &amp; Race Time (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="524288">
@@ -23392,6 +23386,7 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		<description>Pocket Smash Out (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="262144">
@@ -23402,11 +23397,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="karatej" supported="no">
+	<software name="karatej" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>Karate Joe (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="262144">
@@ -23415,10 +23411,11 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="painter" supported="no">
+	<software name="painter">
 		<description>Painter (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="262144">
@@ -23427,11 +23424,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="racetime" supported="no">
+	<software name="racetime">
 		<!-- Notes: GBC only -->
 		<description>Race Time (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="262144">
@@ -23440,25 +23438,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-<!-- This has been hacked to run on MBC01 mapper -->
-	<software name="racetimeh" cloneof="racetime">
-		<!-- Notes: GBC only -->
-		<description>Race Time (Euro, Hacked)</description>
-		<year>200?</year>
-		<publisher>Rocket Games</publisher>
-		<part name="cart" interface="gameboy_cart">
-			<feature name="slot" value="rom_mbc1" />
-			<dataarea name="rom" size="262144">
-				<rom name="race time (hacked) (unl).bin" size="262144" crc="8a5fa98c" sha1="8d8d6c3f5545edbd50813a22fb666c106ceb140b" offset="000000" />
-			</dataarea>
-		</part>
-	</software>
-
-	<software name="sinkj" supported="no">
+	<software name="sinkj" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>Space Invasion &amp; Karate Joe (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="524288">
@@ -23469,11 +23454,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="sinpntr" supported="no">
+	<software name="sinpntr" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>Space Invasion &amp; Painter (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="524288">
@@ -23484,11 +23470,12 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="sinvasn" supported="no">
+	<software name="sinvasn" supported="partial">
 		<!-- Notes: GBC only -->
 		<description>Space Invasion (Euro)</description>
 		<year>200?</year>
 		<publisher>Rocket Games</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_atvrac" />
 			<dataarea name="rom" size="131072">
@@ -23636,6 +23623,369 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
+<!-- Li Cheng games -->
+
+<!--
+
+  * CBA010 Shui Hu Shen Shou 水浒神兽
+  * CBA011 Shu Ma Bao Long 3 - Shui Jing Ban 数码暴龙-水晶版
+  * CBA033 Emo Cheng 2 - Fengyun Pian 恶魔城2-风云篇
+  * CBA060 Mingzhu Koudai Guaishou 2 明珠口袋怪兽2
+  * CBA064 Gangdan Wuyu 2 钢弹物语2
+  * CBA065 Mingzhu Koudai Guaishou 3 明珠口袋怪兽3
+  * CBA073 Shuihu Zhuan - Jingdian Ban 水浒传-经典版
+  * CBA075 Yingxiong Jian 2 英雄剑2
+  * CBA076 Xi You Ji 西游记
+  * CBA078 Shuma Baolong - Diannao Pian 数码暴龙-电脑篇
+  * CBA079 Yingxiong Tianxia 英雄天下
+  * CBA080 Sanguozhi Wudai 三国志五代
+  * CBA083 Tai Kong Bao Bei 太空宝贝
+  * CBA085 Shu Ma Bao Bei - Huojian Bingtuan 数码宝贝-火箭兵团
+  * CBA086 Shu Ma Bao Bei - Chao Mengmeng Fanji Zhan 数码宝贝-超梦梦反击战
+  * CBA087 Shu Ma Bao Bei - Hai Zhi Shen 数码宝贝-海之神
+  * CBA089 Mo Jie 3 - Bu Wanme De Shijie 魔戒3-不完美的世界
+  * CBA091 Luoke Ren DX6 洛克人DX6
+  * CBA097 Shuma Baobei DX6 数码宝贝DX6
+  * CBA147 Shi Mian Maifu - Fengyun Pian 十面埋伏-风云篇
+
+-->
+
+	<software name="shuihusslc" cloneof="shuihuss">
+		<description>Shui Hu Shen Shou (Chi, Li Cheng)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA010"/>
+		<info name="alt_title" value="水浒神兽"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="2097152">
+				<rom name="shuihu shenshou (unlicensed, chinese) (cba010) [raw dump].bin" size="2097152" crc="618080cd" sha1="93aaddc93941cf53978acd9a88e6525b61c7ea24" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="8192"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smbl3lc" cloneof="smbl3">
+		<description>Shu Ma Bao Long 3 - Shui Jing Ban (Chi, Li Cheng)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA011"/>
+		<info name="alt_title" value="数码暴龙-水晶版 (Box)"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="1048576">
+				<rom name="shuma baolong - shuijing ban (unlicensed, chinese) (cba011) [raw dump].bin" size="1048576" crc="ba03bd71" sha1="39d8ebe977cf139be398d87be735ea4f7e6885f7" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="emochen2">
+		<description>Emo Cheng 2 - Fengyun Pian (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA033"/>
+		<info name="alt_title" value="恶魔城2-风云篇"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="524288">
+				<rom name="emo cheng 2 - fengyun pian (unlicensed, chinese) (cba033) [raw dump].bin" size="524288" crc="a98eec81" sha1="6da2499578b3cd362a21594034278c3ab2b9b374" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="8192"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+<!-- AKA Digimon D-4 published by SKOB -->
+	<software name="mingzhu2">
+		<description>Ming Zhu Kou Dai Guai Shou II (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA060"/>
+		<info name="alt_title" value="明珠口袋怪兽2"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="2097152">
+				<rom name="mingzhu koudai guaishou 2 (unlicensed, chinese) (cba060) [raw dump].bin" size="2097152" crc="31f14d99" sha1="0ea3390e4479acf96d65791dd9ab08464753d48a" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="gangdanw">
+		<description>Gang Dan Wu Yu II (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA064"/>
+		<info name="alt_title" value="钢弹物语2"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="2097152">
+				<rom name="gangdan wuyu 2 (unlicensed, chinese) (cba064) [raw dump].bin" size="2097152" crc="09dee8cb" sha1="6753a7a34f057f952172dff5ef9e8961d3af6649" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mingzhu3">
+		<description>Ming Zhu Kou Dai Guai Shou III ~ Digimon Fight ~ El Monstruo (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA065"/>
+		<info name="alt_title" value="明珠口袋怪兽3"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="4194304">
+				<rom name="mingzhu koudai guaishou 3 (unlicensed, multi3) (cba065) [raw dump].bin" size="4194304" crc="a477c7ce" sha1="0e1b3e60d4a982538d4645c36693d5fd548cb641" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="shuihujd">
+		<description>Shui Hu Zhuan - Jing Dian Ban (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA073"/>
+		<info name="alt_title" value="水浒传-经典版"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="1048576">
+				<rom name="shuihu zhuan - jingdian ban (unlicensed, chinese) (cba073) [raw dump].bin" size="1048576" crc="4a083b6e" sha1="c40a80ab26a2a5d884434c215e649dbfebf64fc3" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yingxj2">
+		<description>Ying Xiong Jian 2 (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA075"/>
+		<info name="alt_title" value="英雄剑2"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="2097152">
+				<rom name="yingxiong jian 2 (unlicensed, chinese) (cba075) [raw dump].bin" size="2097152" crc="786eb7a4" sha1="3920e7d5a900981d6877ef99b5f3bed8a061c31f" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="xiyouji">
+		<description>Xi You Ji (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA076"/>
+		<info name="alt_title" value="西游记"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<dataarea name="rom" size="524288">
+				<rom name="xi you ji (unlicensed, chinese) (cba076) [raw dump].bin" size="524288" crc="f2fc4884" sha1="1f1bb35c47b8bd51edf9511513bb5e5e5e07eec1" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smbldnp">
+		<description>Shu Ma Bao Long - Dian Nao Pian (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA078"/>
+		<info name="alt_title" value="数码暴龙-电脑篇"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="1048576">
+				<rom name="shuma baolong - diannao pian (unlicensed, chinese) (cba078) [raw dump].bin" size="1048576" crc="363808b4" sha1="bac6e8b313e87c06dd4838ebc5098e0ef6383925" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="yxtx">
+		<description>Ying Xiong Tian Xia (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA079"/>
+		<info name="alt_title" value="英雄天下"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<dataarea name="rom" size="2097152">
+				<rom name="yingxiong tianxia (unlicensed, chinese) (cba079) [raw dump].bin" size="2097152" crc="5f2d6317" sha1="41f5f0c11e4e99b7d2d1433b09922a0fd2c48d7f" offset="0" />
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="sanguowd">
+		<description>San Guo Zhi Wu Dai (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA080"/>
+		<info name="alt_title" value="三国志五代"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="2097152">
+				<rom name="sanguozhi wudai (unlicensed, chinese) (cba080) [raw dump].bin" size="2097152" crc="de136996" sha1="8e476e9db9caceb52d048b28163227d987a09a21" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="8192"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="taikonglc" cloneof="firmbaby">
+		<description>Tai Kong Bao Bei (Chi, Li Cheng)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA083"/>
+		<info name="alt_title" value="太空宝贝"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="4194304">
+				<rom name="taikong baobei (unlicensed, chinese) (cba083) [raw dump].bin" size="4194304" crc="23f291b3" sha1="278b484fa26f13a98ae5bbe06d19a5c47ccfcd34" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smbbhjbt">
+		<description>Shu Ma Bao Bei - Huo Jian Bing Tuan (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA085"/>
+		<info name="alt_title" value="数码宝贝-火箭兵团"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="524288">
+				<rom name="shuma baobei - huojian bingtuan (unlicensed, chinese) (cba085) [raw dump].bin" size="524288" crc="b0d45b6a" sha1="5e16517d7d4f9ade3c1a65dfc52ab9d6985a821a" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smbbcmm">
+		<description>Shu Ma Bao Bei - Chao Meng Meng Fan Ji Zhan (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA086"/>
+		<info name="alt_title" value="数码宝贝-超梦梦反击战"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="524288">
+				<rom name="shuma baobei - chao mengmeng fanji zhan (unlicensed, chinese) (cba086) [raw dump].bin" size="524288" crc="fc844e0e" sha1="6abec431a861315fb1b284ff964c2abf933444ae" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smbbhzs">
+		<description>Shu Ma Bao Bei - Hai Zhi Shen (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA087"/>
+		<info name="alt_title" value="数码宝贝-海之神"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="524288">
+				<rom name="shuma baobei - hai zhi shen (unlicensed, chinese) (cba087) [raw dump].bin" size="524288" crc="c3cedaed" sha1="4e7b7b361302e5e400047c9e668f23cbc885a9e0" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="mojie3">
+		<description>Mo Jie 3 - Bu Wanme De Shijie (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA089"/>
+		<info name="alt_title" value="魔戒3-不完美的世界"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="524288">
+				<rom name="mo jie 3 - bu wanme de shijie (unlicensed, chinese) (cba089) [raw dump].bin" size="524288" crc="d91e3f98" sha1="556913f2687a49034e1229ef1e375f6036ec5719" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+<!-- This is a clone of the most famous (and still undumped) game by Vast Fame: Zook Hero Z ! -->
+	<software name="lkrdx6">
+		<description>Luo Ke Ren DX6 (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA091"/>
+		<info name="alt_title" value="洛克人DX6"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="1048576">
+				<rom name="luoke ren dx6 (unlicensed, japanese) (cba091) [raw dump].bin" size="1048576" crc="154f885b" sha1="222e8362da7a7eb999150c367a305271c60661b6" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="smbbdx6">
+		<description>Shu Ma Bao Bei - DX6 (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA097"/>
+		<info name="alt_title" value="数码宝贝DX6"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="2097152">
+				<rom name="shuma baobei dx6 (unlicensed, chinese) (cba097) [raw dump].bin" size="2097152" crc="23c19a4d" sha1="f08a5470667be1bb232866b4cb4dfa974752e1a0" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
+	<software name="shimianm">
+		<description>Shi Mian Maifu - Feng Yun Pian (Chi)</description>
+		<year>200?</year>
+		<publisher>Li Cheng</publisher>
+		<info name="serial" value="CBA147"/>
+		<info name="alt_title" value="十面埋伏-风云篇"/>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_licheng" />
+			<!-- cartridge ram -->
+			<dataarea name="rom" size="1048576">
+				<rom name="shi mian maifu - fengyun pian (unlicensed, chinese) (cba147) [raw dump].bin" size="1048576" crc="a5f686c3" sha1="68798ac090df9f5fb1ea9c409adf3dc639bc9842" offset="0" />
+			</dataarea>
+			<dataarea name="nvram" size="32768"> <!-- Unconfirmed size -->
+			</dataarea>
+		</part>
+	</software>
+
 <!-- Sintax games -->
 <!--
   * ST-0206002E Harry Boy Second Edition: The secretx of the chamber of secrets (english)
@@ -23695,10 +24045,11 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="iceage2a" cloneof="iceage2" supported="no">
+	<software name="iceage2a" cloneof="iceage2">
 		<description>Ice Age II (Chi)</description>
 		<year>20??</year>
 		<publisher>Sintax</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_mbc5" />
 			<!-- cartridge ram -->
@@ -24031,7 +24382,7 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="hpotter2">
+	<software name="hpottr2c">
 		<description>Xiao Shi Mi Shi (Chi)</description>
 		<year>200?</year>
 		<publisher>Sintax</publisher>
@@ -24046,7 +24397,7 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="hpotter4">
+	<software name="hpotter4" cloneof="hpottr2c">
 		<description>Harry Xiao Zi IV (Chi)</description>
 		<year>200?</year>
 		<publisher>Sintax</publisher>
@@ -24076,7 +24427,7 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-	<software name="qtdsheng">
+	<software name="qtdsheng" cloneof="xiyouji">
 		<description>Qi Tian Da Sheng - Sun Wu Kong (Chi, Ripped from 8 in 1 multicart)</description>
 		<year>200?</year>
 		<publisher>&lt;unknown&gt;</publisher>
@@ -24193,7 +24544,7 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 
 	<software name="taikong" cloneof="firmbaby">
 	<!-- 4MB rom with crc 5b49af92 is taizou's cracked version running on base MBC5 -->
-		<description>Tai Kong Bao Bei (Chi)</description>
+		<description>Tai Kong Bao Bei (Chi, Syntax)</description>
 		<year>200?</year>
 		<publisher>Sintax</publisher>
 		<info name="alt_title" value="太空寶貝"/>
@@ -24774,8 +25125,20 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
+	<software name="hpotter2">
+		<description>Harry Potter 2 (Asia)</description>
+		<year>2002?</year>
+		<publisher>V.Fame?</publisher>
+		<part name="cart" interface="gameboy_cart">
+			<feature name="slot" value="rom_mbc5" />
+			<dataarea name="rom" size="1048576">
+				<rom name="harry potter ii (unlicensed, english).bin" size="1048576" crc="2ff706c0" sha1="e3f21a748d517527218409e35418b23ced8717da" offset="000000" />
+			</dataarea>
+		</part>
+	</software>
+
 <!-- This is a title hack of an undumped 'Harry Potter 3: 神奇の光輪' -->
-	<software name="hpotter3">
+	<software name="hpotter3c" cloneof="hpotter2">
 		<description>Harry Potter 3 2003 (Chi)</description>
 		<year>2003?</year>
 		<publisher>V.Fame?</publisher>
@@ -25112,36 +25475,19 @@ These were produced between 2000 and 2001 by Rocket Games, run by Datel Design
 		</part>
 	</software>
 
-<!-- works on gbpocket -->
 	<software name="sqsd">
 		<!-- Alt. Title: 石器時代 精靈王誕生 (Stone Age - Birth of the Goblin King) -->
 		<description>Shi Qi Shi Dai - Jing Ling Wang Dan Sheng (Chi)</description>
 		<year>20??</year>
 		<publisher>GOWIN</publisher>
+		<info name="usage" value="Enable 'Skip BIOS check' configuration setting to boot"/>
 		<part name="cart" interface="gameboy_cart">
 			<feature name="slot" value="rom_yong" />
 			<!-- cartridge ram -->
 			<dataarea name="rom" size="4194304">
 				<rom name="stone age (unl).bin" size="4194304" crc="e7d9d377" sha1="f88f605960c1573aa8bc5fafab19014b0d987729" offset="000000" />
 			</dataarea>
-			<dataarea name="nvram" size="8192">
-			</dataarea>
-		</part>
-	</software>
-
-<!-- works on gbpocket -->
-	<software name="sqsdh" cloneof="sqsd">
-		<!-- Alt. Title: 石器時代 精靈王誕生 (Stone Age - Birth of the Goblin King) -->
-		<description>Shi Qi Shi Dai - Jing Ling Wang Dan Sheng (Chi, Hacked?)</description>
-		<year>20??</year>
-		<publisher>GOWIN</publisher>
-		<part name="cart" interface="gameboy_cart">
-			<feature name="slot" value="rom_yong" />
-			<!-- cartridge ram -->
-			<dataarea name="rom" size="4194304">
-				<rom name="stone age (unl)(hacked).bin" size="4194304" crc="2ffe697c" sha1="b992f280b5dd2095c8f430282c5dba69c6a10eb4" offset="000000" />
-			</dataarea>
-			<dataarea name="nvram" size="65536">
+			<dataarea name="nvram" size="8192"> <!-- or 65536 ? -->
 			</dataarea>
 		</part>
 	</software>
